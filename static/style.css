@@ -1,0 +1,160 @@
+/* Workspace style css */
+
+#main{ 
+	padding-top: 60px; 
+}
+
+#homeNav{
+    margin-left: 25%;
+}
+
+#navigationBar{
+    background-color: #033773;  
+    border: none;
+    border-radius: 0px;  
+    position: fixed;  
+    width: 100%;
+    padding: 1px;
+    z-index: 2;
+}
+
+#textNav{
+    color: #ffffff;
+    font-size: 16px;
+}
+
+#textNav:hover{
+    color: #000000;
+    font-size: 16px;
+}
+
+#textNav2{
+    color: #ffffff;
+    font-size: 16px;
+}
+
+#textNav2:hover{
+    color: #000000;
+    font-size: 16px;
+}
+
+#content{
+    text-align: center;
+    width: 85%;
+    float: right;
+    padding-top: 5px;
+    background-color: #ffffff;
+}
+
+/* sidebar nav vertical */ 
+@media (min-width: 768px) {
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+  }
+  .sidebar-nav .navbar ul:not {
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+  .sidebar-nav .navbar li a {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
+
+@media (min-width: 768px){
+    .col-sm-3 {
+        width: 20%;
+        padding-left: 0px;
+    }
+}
+
+#verticalNav{
+    background-color: #eee;
+    border-radius: 0px;
+    height: 100%;
+    position: fixed;
+    margin-top: 52px;
+    border: none;
+    font-size: 16px;
+}
+
+#sections:hover{
+    background-color: #033773;
+}
+
+#aSections{
+    color: #333333;
+}
+
+#aSections:hover{
+    color: #ffffff;
+}
+
+#aSections.active{
+    background-color: #033773;
+    color: #fff;
+}
+
+.sectionActive{
+    background-color: #033773;
+    color: #fff !important;
+}
+
+#exportBtn,
+#exportBtn2,
+#exportBtn3,
+#exportBtnWeight,
+#exportBtnWeight2,
+#exportBtnWeight3,
+#saveBtn2,
+#saveBtn3{
+    margin: 5px;
+    margin-top: 15px;
+    text-align: center;
+    margin-bottom: -18px;
+}
+
+#exportBtnAll,
+#saveBtn,
+#compareBtn{
+    margin: 5px;
+    text-align: center;
+    margin-bottom: -18px;
+}
+
+#methodButtons{
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+    margin-right: 10px; 
+}
+
+#tutorial{
+    text-align: left;
+    margin: 0px 245px;
+    font-size: 17px;
+}
+
+#step1,
+#step2,
+#step3,
+#step4{
+    font-weight: bold;
+}
+
+#step1 ul,
+#step1 ol,
+#step4 ul,
+#step4 ol{
+    font-weight: normal;
+}

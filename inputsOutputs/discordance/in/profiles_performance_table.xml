@@ -1,0 +1,161 @@
+<?xml version="1.0" ?>
+<xmcda:XMCDA xmlns:xmcda="http://www.decision-deck.org/2009/XMCDA-2.1.0">
+  <performanceTable mcdaConcept="Fictive">
+    <alternativePerformances>
+      <alternativeID>b1</alternativeID>
+      <performance>
+        <criterionID>g1 - Price</criterionID>
+        <value>
+          <integer>3</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g2 - Location</criterionID>
+        <value>
+          <integer>8</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g3 - Schedule</criterionID>
+        <value>
+          <integer>12</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g4 - Parking</criterionID>
+        <value>
+          <integer>0</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g5 - Culture</criterionID>
+        <value>
+          <integer>9</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g6 - Menu Variety</criterionID>
+        <value>
+          <integer>1</integer>
+        </value>
+      </performance>
+    </alternativePerformances>
+    <alternativePerformances>
+      <alternativeID>b2</alternativeID>
+      <performance>
+        <criterionID>g2 - Location</criterionID>
+        <value>
+          <integer>2</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g3 - Schedule</criterionID>
+        <value>
+          <integer>9</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g1 - Price</criterionID>
+        <value>
+          <integer>2</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g4 - Parking</criterionID>
+        <value>
+          <integer>10</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g5 - Culture</criterionID>
+        <value>
+          <integer>3</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g6 - Menu Variety</criterionID>
+        <value>
+          <integer>0</integer>
+        </value>
+      </performance>
+    </alternativePerformances>
+    <alternativePerformances>
+      <alternativeID>b3</alternativeID>
+      <performance>
+        <criterionID>g1 - Price</criterionID>
+        <value>
+          <integer>12</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g3 - Schedule</criterionID>
+        <value>
+          <integer>3</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g2 - Location</criterionID>
+        <value>
+          <integer>2</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g4 - Parking</criterionID>
+        <value>
+          <integer>7</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g6 - Menu Variety</criterionID>
+        <value>
+          <integer>3</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g5 - Culture</criterionID>
+        <value>
+          <integer>0</integer>
+        </value>
+      </performance>
+    </alternativePerformances>
+    <alternativePerformances>
+      <alternativeID>b4</alternativeID>
+      <performance>
+        <criterionID>g1 - Price</criterionID>
+        <value>
+          <integer>3</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g4 - Parking</criterionID>
+        <value>
+          <integer>0</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g2 - Location</criterionID>
+        <value>
+          <integer>9</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g3 - Schedule</criterionID>
+        <value>
+          <integer>8</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g5 - Culture</criterionID>
+        <value>
+          <integer>3</integer>
+        </value>
+      </performance>
+      <performance>
+        <criterionID>g6 - Menu Variety</criterionID>
+        <value>
+          <integer>2</integer>
+        </value>
+      </performance>
+    </alternativePerformances>
+  </performanceTable>
+</xmcda:XMCDA>

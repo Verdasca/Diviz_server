@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmcda:XMCDA xmlns:xmcda="http://www.decision-deck.org/2009/XMCDA-2.1.0">
+    <categories>
+	    <category id="pMG" name="MG"></category>
+	    <category id="pBM" name="BM"></category>
+    </categories>
+</xmcda:XMCDA>

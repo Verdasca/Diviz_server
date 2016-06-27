@@ -1,0 +1,1 @@
+python ElectreNFSOutranking.py -i tests/in2_crisp -o tests/out2_crisp

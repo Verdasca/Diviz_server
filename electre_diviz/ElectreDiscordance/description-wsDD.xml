@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<program_description xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../docs/w3-ws/specificationData/description.xsd">
+  <program provider="PUT" name="ElectreDiscordance" displayName="ElectreDiscordance" version="0.2.0" />
+  <documentation>
+    <description>ElectreDiscordance - computes partial (i.e. per-criterion) discordance matrix using procedure which is common to the most methods from the Electre family.
+
+The key feature of this module is its flexibility in terms of the types of elements allowed to compare, i.e. alternatives vs alternatives, alternatives vs boundary profiles and alternatives vs central (characteristic) profiles.
+
+It also brings two new concepts: a 'counter-veto' threshold (cv) and 'pre-veto' threshold (pv) such as: <![CDATA[cv >= v >= pv >= p]]> (where 'v' is 'veto' threshold, and 'p' is 'preference' threshold).
+    </description>
+    <url>http://github.com/xor-xor/electre_diviz</url>
+  </documentation>
+  <parameters>
+
+    <input id="input1" name="alternatives" displayName="alternatives" isoptional="0">
+      <documentation>
+        <description>Alternatives to consider.</description>
+      </documentation>
+      <xmcda tag="alternatives" />
+    </input>
+
+    <input id="input2" name="classes_profiles" displayName="classes_profiles" isoptional="1">
+      <documentation>
+        <description>Definitions of profiles (boundary or central) which should be used for classes (categories) representation.</description>
+      </documentation>
+      <xmcda tag="categoriesProfiles" />
+    </input>
+
+    <input id="input3" name="criteria" displayName="criteria" isoptional="0">
+      <documentation>
+        <description>Criteria to consider, possibly with preference, veto, pre-veto and counter-veto thresholds. Each criterion must have a preference direction specified (min or max). It is worth mentioning that this module allows to define thresholds as constants as well as linear functions.</description>
+      </documentation>
+      <xmcda tag="criteria" />
+    </input>
+
+    <input id="input4" name="performance_table" displayName="performance_table" isoptional="0">
+      <documentation>
+        <description>The performance of alternatives.</description>
+      </documentation>
+      <xmcda tag="performanceTable" />
+    </input>
+
+    <input id="input5" name="profiles_performance_table" displayName="profiles_performance_table" isoptional="1">
+      <documentation>
+        <description>The performance of profiles (boundary or central).</description>
+      </documentation>
+      <xmcda tag="performanceTable" />
+    </input>
+
+    <input id="input6" name="method_parameters" displayName="method_parameters" isoptional="0">
+      <documentation>
+        <description>A set of parameters provided to tune up the module's operation.</description>
+      </documentation>
+      <xmcda tag="methodParameters">
+        <![CDATA[
+        <methodParameters>
+          <parameter name="comparison_with">
+            <value>
+              <label>%1</label>
+            </value>
+          </parameter>
+          <parameter name="use_pre_veto">
+            <value>
+              <boolean>%2</boolean>
+            </value>
+          </parameter>
+        </methodParameters>
+        ]]>
+      </xmcda>
+      <gui status="preferGUI">
+        <entry id="%1" type="enum" displayName="comparison_with">
+          <documentation>
+            <description>This parameter specifies the type of elements provided for comparison.
+
+Choosing 'boundary_profiles' or 'central_profiles' requires providing inputs 'classes_profiles' and 'profiles_performance_table' as well (which are optional by default).</description>
+        </documentation>
+          <items>
+            <item id="item0">
+              <description>alternatives vs alternatives</description>
+              <value>alternatives</value>
+            </item>
+            <item id="item1">
+              <description>alternatives vs boundary profiles</description>
+              <value>boundary_profiles</value>
+            </item>
+            <item id="item2">
+              <description>alternatives vs central (characteristic) profiles</description>
+              <value>central_profiles</value>
+            </item>
+          </items>
+          <defaultValue>item0</defaultValue>
+        </entry>
+        <entry id="%2" type="boolean" displayName="use_pre_veto">
+          <documentation>
+            <description>This parameter specifies if you want to take into account another (optional) threshold called 'pre-veto threshold', such as: <![CDATA[v >= pv >= p]]> (where 'v' is 'normal' veto threshold, 'pv' is the pre-veto threshold and 'p' is preference threshold).</description>
+          </documentation>
+          <defaultValue>false</defaultValue>
+        </entry>
+      </gui>
+    </input>
+
+    <output id="output1" name="discordance" displayName="discordance">
+      <documentation>
+        <description>Partial (i.e. per-criterion) discordance indices computed from the given data.</description>
+      </documentation>
+      <xmcda tag="alternativesComparisons" />
+    </output>
+
+    <output id="output2" name="counter_veto_crossed" displayName="counter_veto_crossed">
+      <documentation>
+        <description>This input contains information regarding the number of criteria per pair of the alternatives/profiles on which the 'counter-veto' threshold has been crossed. Please note that this output will be created even if 'counter-veto' threshold has not been defined - in such case, all the values will be set to 'false'.</description>
+      </documentation>
+      <xmcda tag="alternativesComparisons" />
+    </output>
+
+    <output id="output3" name="messages" displayName="messages">
+      <documentation>
+        <description>Messages or errors generated by this module.</description>
+      </documentation>
+      <xmcda tag="methodMessages" />
+    </output>
+
+  </parameters>
+</program_description>

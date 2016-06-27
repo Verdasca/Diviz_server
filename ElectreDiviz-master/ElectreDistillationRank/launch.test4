@@ -1,0 +1,1 @@
+python ElectreDistillationRank.py -i tests/in4 -o tests/out4

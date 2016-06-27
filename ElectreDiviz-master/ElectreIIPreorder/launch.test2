@@ -1,0 +1,1 @@
+python ElectreIIPreorder.py -i tests/in2 -o tests/out2

@@ -1,0 +1,1 @@
+python ElectreDistillation.py -i tests/in10 -o tests/out10

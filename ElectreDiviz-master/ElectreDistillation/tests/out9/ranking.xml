@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xmcda:XMCDA xmlns:xmcda='http://www.decision-deck.org/2012/XMCDA-2.2.0'
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+  xsi:schemaLocation='http://www.decision-deck.org/2012/XMCDA-2.2.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.2.0.xsd'>
+<alternativesValues>
+  <alternativeValue>
+    <alternativeID>APS</alternativeID>
+    <value>
+      <integer>8</integer>
+    </value>
+  </alternativeValue>
+  <alternativeValue>
+    <alternativeID>AWF</alternativeID>
+    <value>
+      <integer>5</integer>
+    </value>
+  </alternativeValue>
+  <alternativeValue>
+    <alternativeID>PW</alternativeID>
+    <value>
+      <integer>2</integer>
+    </value>
+  </alternativeValue>
+  <alternativeValue>
+    <alternativeID>PWT</alternativeID>
+    <value>
+      <integer>7</integer>
+    </value>
+  </alternativeValue>
+  <alternativeValue>
+    <alternativeID>SGGW</alternativeID>
+    <value>
+      <integer>4</integer>
+    </value>
+  </alternativeValue>
+  <alternativeValue>
+    <alternativeID>SGH</alternativeID>
+    <value>
+      <integer>3</integer>
+    </value>
+  </alternativeValue>
+  <alternativeValue>
+    <alternativeID>SGSP</alternativeID>
+    <value>
+      <integer>8</integer>
+    </value>
+  </alternativeValue>
+  <alternativeValue>
+    <alternativeID>UKSW</alternativeID>
+    <value>
+      <integer>6</integer>
+    </value>
+  </alternativeValue>
+  <alternativeValue>
+    <alternativeID>UW</alternativeID>
+    <value>
+      <integer>1</integer>
+    </value>
+  </alternativeValue>
+  <alternativeValue>
+    <alternativeID>WAT</alternativeID>
+    <value>
+      <integer>5</integer>
+    </value>
+  </alternativeValue>
+</alternativesValues>
+</xmcda:XMCDA>

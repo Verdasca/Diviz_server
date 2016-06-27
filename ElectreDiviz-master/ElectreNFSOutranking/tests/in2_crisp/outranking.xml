@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmcda:XMCDA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xmcda="http://www.decision-deck.org/2009/XMCDA-2.0.0" xsi:schemaLocation="http://www.decision-deck.org/2009/XMCDA-2.0.0 http://sma.uni.lu/d2cms/xmcda/_downloads/XMCDA-2.0.0.xsd">
+<alternativesComparisons>
+	<pairs>
+		<pair>
+			<initial>
+				<alternativeID>ITA</alternativeID>
+			</initial>
+			<terminal>
+				<alternativeID>BEL</alternativeID>
+			</terminal>
+		</pair>
+		<pair>
+			<initial>
+				<alternativeID>ITA</alternativeID>
+			</initial>
+			<terminal>
+				<alternativeID>GER</alternativeID>
+			</terminal>
+		</pair>
+		<pair>
+			<initial>
+				<alternativeID>BEL</alternativeID>
+			</initial>
+			<terminal>
+				<alternativeID>ITA</alternativeID>
+			</terminal>
+		</pair>
+	</pairs>
+</alternativesComparisons>
+</xmcda:XMCDA>

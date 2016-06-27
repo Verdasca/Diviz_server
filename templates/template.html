@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Diviz server - methods</title> 
+  <meta charset=utf-8> 
+  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+  <!-- CSS -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link rel="icon" type="text/json" href="{{ url_for('static', filename='checkData.json') }}">
+  
+  <!-- JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" type="text/javascript"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav id="navigationBar" class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <a id="textNav" class="navbar-brand" style="font-size:18px">MCDA Framework</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a id="textNav" href="http://vps288667.ovh.net:3901/login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <div class="col-sm-3">
+    <div class="sidebar-nav">
+      <div id="verticalNav" class="navbar navbar-default" role="navigation">
+        <div class="navbar-collapse collapse sidebar-navbar-collapse">
+          <ul id="optionList" class="nav navbar-nav">
+            <li id="sections"><a id="aSections" href="javascript:void(0);" onclick="changeSection('criterion');">Criterion Set</a></li>
+            <li id="sections"><a id="aSections" href="javascript:void(0);" onclick="changeSection('alternative');">Alternative Set</a></li>
+            <li id="sections"><a id="aSections" href="javascript:void(0);" onclick="changeSection('performance');">Performance Table</a></li>
+            <li id="sections"><a id="aSections" href="javascript:void(0);" onclick="changeSection('configurations');">Decision Configurations</a></li>
+            <li id="sections"><a id="aSections" class="active" href="javascript:void(0);" onclick="changeSection('divizServer');">MCDA Methods</a></li>
+            <li id="sections"><a id="aSections" href="javascript:void(0);" onclick="changeSection('results');">Results</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="main">
+    <div id="content">
+      <h2>MCDA Methods</h2>
+      <br/> 
+      <h3>Electre Tri-C</h3>
+      <br/>
+      <ol type="1" id="tutorial">
+        <li id="step1">Define criteria (Criterion Set).
+          <ul style="list-style-type:disc">
+            <li>Mandatory set: name, direction, weight, indifference, preference and veto;</li>
+            <li>Weight can be defined: in Criterion Set or in Decision Configurations using the method "determining weights of criteria".</li>
+          </ul>
+        </li>
+        <li id="step2">Define alternatives (Alternative Set).</li>
+        <li id="step3">Fill the performance table (Performance Table).</li>
+        <li id="step4">In Decision Configurations:
+          <ol type="a">
+            <li id="step5">Define categories;</li>
+            <li id="step6">Give a value for the Credibility Lambda ( λ ) between [0.5 ; 1.0];</li>
+            <li id="step7">Fill the Profiles Performance Table.</li>
+          </ol>
+        </li>
+      </ol>
+      <br/><br/> 
+      <!-- <a href="/createXMLFiles/"><button id="methodButtons" class="btn btn-info" type="button">Select Data</button></a> -->
+      <a href="javascript:void(0);" onclick="setProjectID();"><button id="methodButtons" class="btn btn-success" type="button">Execute Method</button></a> 
+      <a href="/readXMLFile/"><button id="methodButtons" class="btn btn-primary" type="button">Show Results</button></a> 
+      <!-- <button id="methodButtons" class="btn btn-primary" type="button" onclick="loadXMLResults()">Show Results Test</button> -->
+      <br/><br/>
+<!--       <a href="/my-link/"><button type="button">Click me</button></a>
+      <a href="/tri/">Tri</a>
+      <a href="/xml/">Gerar XML File</a>
+      <a href="/tableTeste/">table Teste</a>
+      <br/>
+      <a href="/mongo/">Mongo db teste</a>
+      <a href="/read/">Read XML File</a>
+      <a href="/copiar/">Copiar ficheiros</a>
+      <br/>
+      <a href="/mongo2/">Teste de Mongodb com manipulacao</a>
+      <p id="demo">TESTE</p>  -->
+      <!-- <a href="javascript:void(0);" onclick="setProjectID();">Teste nova BD project ID e user ID</a> -->
+      <!-- <button onclick="init();">Show states</button>
+      <p id="projectID"></p>
+      <p id="teste"></p> -->
+    </div>
+  </div>
+  <!--<script type="text/javascript" src="../static/checkData.json"></script>-->
+  <script type="text/javascript">
+    var projectId = getParameterByName('projectId'); 
+    //document.getElementById('projectID').innerHTML = projectId;
+
+    // Function to get project id from the url as a parameter
+    function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
+    // Function to change section with the rigth project id
+    function changeSection(name){
+      var url = "";
+      var id = projectId;
+      var sectionName = name;
+      if(sectionName == 'divizServer'){
+        //url = 'http://vps288667.ovh.net:5010?projectId='+id;  
+        //window.location(url);
+        location.href = 'http://vps288667.ovh.net:5010?projectId='+id;   
+      }else{
+        //url = 'http://vps288667.ovh.net:3901/'+sectionName+'.html?projectId='+id; 
+        //window.location(url);
+        location.href = 'http://vps288667.ovh.net:3901/'+sectionName+'.html?projectId='+id; 
+      }  
+    }
+
+    // Have to pass the projectId parameter to execute method href to get the project id
+    function setProjectID(){
+      var id = projectId;
+      location.href = '/electreTriC/?projectId='+id;
+    }
+
+    function loadJSON(callback) {     
+      var xobj = new XMLHttpRequest();
+          xobj.overrideMimeType("application/json");
+      xobj.open('GET', 'static/checkData.json', true); // Replace 'my_data' with the path to your file
+      xobj.onreadystatechange = function () {
+            if (xobj.readyState == 4 && xobj.status == "200") {
+              // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+              callback(xobj.responseText);
+            }
+      };
+      xobj.send(null);  
+    }
+
+    setTimeout(function() {
+      configTutorial(); 
+    }, 1000);
+
+    //Function test to check the configuration file (see the state of the method)
+    function configTutorial() {
+      loadJSON(function(response) {
+      // Parse JSON string into object
+        var actual_JSON = JSON.parse(response);
+        //document.getElementById("teste").innerHTML = "Alternatives: "+ actual_JSON.alternatives + 
+        //"<br/> Criteria: "+ actual_JSON.criterions + "<br/>Parameters: "+ actual_JSON.parameters + "<br/>Categories: " + actual_JSON.categories + "<br/>Performance Table: "+ actual_JSON.performancetables + "<br/>Profile Table: "+ actual_JSON.profiletables
+        //alert(actual_JSON.categories);
+        // See if step 1 - criteria are done or not
+        if(actual_JSON.criterions){
+          document.getElementById("step1").style.color = 'red';
+          document.getElementById("step1").innerHTML += '&#10060';
+        } else{
+          document.getElementById("step1").style.color = 'green';
+          document.getElementById("step1").innerHTML += '&#9989';
+        }
+        // See if step 2 - alternatives are done or not
+        if(actual_JSON.alternatives){
+          document.getElementById("step2").style.color = 'red';
+          document.getElementById("step2").innerHTML += '&#10060';
+        } else{
+          document.getElementById("step2").style.color = 'green';
+          document.getElementById("step2").innerHTML += '&#9989';
+        }
+        // See if step 3 - performance table is done or not
+        if(actual_JSON.performancetables){
+          document.getElementById("step3").style.color = 'red';
+          document.getElementById("step3").innerHTML += '&#10060';
+        } else{
+          document.getElementById("step3").style.color = 'green';
+          document.getElementById("step3").innerHTML += '&#9989';
+        }
+        // See if step 4 is all done or not
+        if(actual_JSON.categories || actual_JSON.parameters || actual_JSON.profiletables){
+          document.getElementById("step4").style.color = 'red';
+          document.getElementById("step4").innerHTML += '&#10060';
+        } else{
+          document.getElementById("step4").style.color = 'green';
+          document.getElementById("step4").innerHTML += '&#9989';
+        }
+        // See if step 5, 6 and 7 - categories, parameters and profiles are done or not
+        if(actual_JSON.categories){
+          document.getElementById("step5").style.color = 'red';
+        } else{
+          document.getElementById("step5").style.color = 'green';
+        }
+        if(actual_JSON.parameters){
+          document.getElementById("step6").style.color = 'red';
+        } else{
+          document.getElementById("step6").style.color = 'green';
+        }
+        if(actual_JSON.profiletables){
+          document.getElementById("step7").style.color = 'red';
+        } else{
+          document.getElementById("step7").style.color = 'green';
+        }
+     });
+    }
+  </script>
+</body>
+</html>
