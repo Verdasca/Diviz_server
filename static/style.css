@@ -38,6 +38,16 @@
     font-size: 16px;
 }
 
+#userName{
+    color: #ffffff;
+    font-size: 16px;
+}
+
+#userName:hover{
+    color: #000000;
+    font-size: 16px;
+}
+
 #content{
     text-align: center;
     width: 85%;
@@ -85,19 +95,26 @@
     font-size: 16px;
 }
 
-#sections:hover{
+#sections:hover,
+#sectionsCriteria:hover,
+#sectionsAlternatives:hover,
+#sectionsPerformances:hover,
+#sectionsConfigurations:hover{
     background-color: #033773;
 }
 
-#aSections{
+#aSections,
+#aSectionsDescription{
     color: #333333;
 }
 
-#aSections:hover{
+#aSections:hover,
+#aSectionsDescription:hover{
     color: #ffffff;
 }
 
-#aSections.active{
+#aSections.active,
+#aSectionsDescription.active{
     background-color: #033773;
     color: #fff;
 }
@@ -139,6 +156,18 @@
     margin-right: 10px; 
 }
 
+#buttonDiviz {
+    width: 90%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    display: table;
+    margin: 5px auto;
+}
+
 #tutorial{
     text-align: left;
     margin: 0px 245px;
@@ -158,3 +187,30 @@
 #step4 ol{
     font-weight: normal;
 }
+
+#criHeader{
+    text-align: center;  
+    font-size: 18px;  
+}
+
+#resultsTable{
+    margin: auto;
+    text-align: center;
+    width: 80%;
+}
+
+#explanation{
+    width: 80%;
+    font-size: 18px;
+    text-align: center;
+    margin: auto;
+}
+
+#errorMessage{
+    width: 80%;
+    font-size: 18px;
+    text-align: center;
+    margin: auto;
+    color: red;
+}
+

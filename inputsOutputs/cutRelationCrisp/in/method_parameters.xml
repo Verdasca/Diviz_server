@@ -8,7 +8,7 @@
     </parameter>
     <parameter name="cut_threshold">
       <value>
-        <real>0.6</real>
+        <real>0.7</real>
       </value>
     </parameter>
   </methodParameters>

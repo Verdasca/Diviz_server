@@ -23,6 +23,8 @@
           <a id="textNav" class="navbar-brand" style="font-size:18px">MCDA Framework</a>
         </div>
         <ul class="nav navbar-nav navbar-right">
+          <li><a id="userName" style="font-size:18px"></a></li>
+          <li><a id="textNav" href="javascript:void(0);" onclick="setName();"><span class="glyphicon glyphicon-list-alt"></span> Back to Project Set</a></li>
           <li><a id="textNav" href="http://vps288667.ovh.net:3901/login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
         </ul>
       </div>
@@ -33,12 +35,13 @@
       <div id="verticalNav" class="navbar navbar-default" role="navigation">
         <div class="navbar-collapse collapse sidebar-navbar-collapse">
           <ul id="optionList" class="nav navbar-nav">
-            <li id="sections"><a id="aSections" href="javascript:void(0);" onclick="changeSection('criterion');">Criterion Set</a></li>
-            <li id="sections"><a id="aSections" href="javascript:void(0);" onclick="changeSection('alternative');">Alternative Set</a></li>
-            <li id="sections"><a id="aSections" href="javascript:void(0);" onclick="changeSection('performance');">Performance Table</a></li>
-            <li id="sections"><a id="aSections" href="javascript:void(0);" onclick="changeSection('configurations');">Decision Configurations</a></li>
-            <li id="sections"><a id="aSections" class="active" href="javascript:void(0);" onclick="changeSection('divizServer');">MCDA Methods</a></li>
-            <li id="sections"><a id="aSections" href="javascript:void(0);" onclick="changeSection('results');">Results</a></li>
+            <li id="sections"><a id="aSectionsDescription" href="javascript:void(0);" onclick="changeSection('description');">Description</a></li>
+            <li id="sectionsCriteria"><a id="aSections" href="javascript:void(0);" onclick="changeSection('criterion');">Criterion Set</a></li>
+            <li id="sectionsAlternatives"><a id="aSections" href="javascript:void(0);" onclick="changeSection('alternative');">Alternative Set</a></li>
+            <li id="sectionsPerformances"><a id="aSections" href="javascript:void(0);" onclick="changeSection('performance');">Performance Table</a></li>
+            <li id="sectionsConfigurations"><a id="aSections" href="javascript:void(0);" onclick="changeSection('configurations');">Decision Configurations</a></li>
+            <li><button id="buttonDiviz" class="btn btn-success" onclick="changeSection('divizServer');">Execute</button></li>
+            <li><button id="buttonDiviz" class="btn btn-primary" onclick="changeSection('results');">Results</button></li>
           </ul>
         </div>
       </div>
@@ -46,54 +49,34 @@
   </div>
   <div id="main">
     <div id="content">
-      <h2>MCDA Methods</h2>
       <br/> 
-      <h3>Electre Tri-C</h3>
+      <p id="explanation">If you want to save these results please click on "Save Results" button, otherwise these results will be lost.<br> To see all your saved results click on "Results" button.</p>
+      <br/> 
+      <button id="methodButtons" class="btn btn-info" type="button" onclick="saveResult()">Save Results</button>
       <br/>
-      <ol type="1" id="tutorial">
-        <li id="step1">Define criteria (Criterion Set).
-          <ul style="list-style-type:disc">
-            <li>Mandatory set: name, direction, weight, indifference, preference and veto;</li>
-            <li>Weight can be defined: in Criterion Set or in Decision Configurations using the method "determining weights of criteria".</li>
-          </ul>
-        </li>
-        <li id="step2">Define alternatives (Alternative Set).</li>
-        <li id="step3">Fill the performance table (Performance Table).</li>
-        <li id="step4">In Decision Configurations:
-          <ol type="a">
-            <li id="step5">Define categories;</li>
-            <li id="step6">Give a value for the Credibility Lambda ( λ ) between [0.5 ; 1.0];</li>
-            <li id="step7">Fill the Profiles Performance Table.</li>
-          </ol>
-        </li>
-      </ol>
-      <br/><br/> 
-      <!-- <a href="/createXMLFiles/"><button id="methodButtons" class="btn btn-info" type="button">Select Data</button></a> -->
-      <a href="javascript:void(0);" onclick="setProjectID();"><button id="methodButtons" class="btn btn-success" type="button">Execute Method</button></a> 
-      <a href="/readXMLFile/"><button id="methodButtons" class="btn btn-primary" type="button">Show Results</button></a> 
-      <!-- <button id="methodButtons" class="btn btn-primary" type="button" onclick="loadXMLResults()">Show Results Test</button> -->
       <br/><br/>
-<!--       <a href="/my-link/"><button type="button">Click me</button></a>
-      <a href="/tri/">Tri</a>
-      <a href="/xml/">Gerar XML File</a>
-      <a href="/tableTeste/">table Teste</a>
-      <br/>
-      <a href="/mongo/">Mongo db teste</a>
-      <a href="/read/">Read XML File</a>
-      <a href="/copiar/">Copiar ficheiros</a>
-      <br/>
-      <a href="/mongo2/">Teste de Mongodb com manipulacao</a>
-      <p id="demo">TESTE</p>  -->
-      <!-- <a href="javascript:void(0);" onclick="setProjectID();">Teste nova BD project ID e user ID</a> -->
-      <!-- <button onclick="init();">Show states</button>
-      <p id="projectID"></p>
-      <p id="teste"></p> -->
+      <table style="display:none" id="resultsTable" border="1" bordercolor="#033773" class="table table-bordered horizontal">
+                <thead>
+                    <th id="criHeader">Alternative</th>
+                    <th id="criHeader">Minimum</th>
+                    <th id="criHeader">Maximum</th>
+                </thead>
+                <tbody></tbody>
+      </table>
+      <p id="errorMessage" style="display:none"></p>
+      <br/><br/> 
     </div>
   </div>
   <!--<script type="text/javascript" src="../static/checkData.json"></script>-->
   <script type="text/javascript">
     var projectId = getParameterByName('projectId'); 
-    //document.getElementById('projectID').innerHTML = projectId;
+    var projectName = getParameterByName('project');
+    var username = getParameterByName('n'); 
+    var resultsPath = 'http://vps288667.ovh.net:5010/static/' + projectId + '/assignments.xml'; 
+    var messagePath = 'http://vps288667.ovh.net:5010/static/' + projectId + '/messages.xml'; 
+    var checkDataPath = 'http://vps288667.ovh.net:5010/static/' + projectId + '/checkData.json'; 
+    document.getElementById("userName").innerHTML = 'User: ' + username;
+    document.getElementById("aSectionsDescription").innerHTML = projectName + '<br> Description';
 
     // Function to get project id from the url as a parameter
     function getParameterByName(name, url) {
@@ -110,28 +93,54 @@
     function changeSection(name){
       var url = "";
       var id = projectId;
+      var user = username;
+      var project = projectName;
       var sectionName = name;
       if(sectionName == 'divizServer'){
         //url = 'http://vps288667.ovh.net:5010?projectId='+id;  
         //window.location(url);
-        location.href = 'http://vps288667.ovh.net:5010?projectId='+id;   
+        location.href = 'http://vps288667.ovh.net:5010/electreTriC/?projectId='+id+'&n='+user+'&project='+project;    
       }else{
         //url = 'http://vps288667.ovh.net:3901/'+sectionName+'.html?projectId='+id; 
         //window.location(url);
-        location.href = 'http://vps288667.ovh.net:3901/'+sectionName+'.html?projectId='+id; 
+        location.href = 'http://vps288667.ovh.net:3901/'+sectionName+'.html?projectId='+id+'&n='+user; 
       }  
     }
 
     // Have to pass the projectId parameter to execute method href to get the project id
     function setProjectID(){
       var id = projectId;
-      location.href = '/electreTriC/?projectId='+id;
+      var user = username;
+      var project = projectName;
+      location.href = '/electreTriC/?projectId='+id+'&n='+user+'&project='+project;  
     }
 
-    function loadJSON(callback) {     
+    // Have to pass the n parameter to execute method href to get the name
+    function setName(){
+      var id = projectId;
+      var user = username;
+      location.href = '/projectSection/?n='+user;
+    }
+
+    // TODO
+    // Save results on mongodb
+    function saveResult(){
+      var id = projectId;
+      var user = username;
+      var project = projectName;
+      // See if results where successful, if not don't save results
+      if(document.getElementById('resultsTable').style.display == 'none'){
+        console.log('Do not save the results because of the error message...');
+        return 0;
+      }
+      //location.href = '/saveResult/?projectId='+id+'&n='+user+'&project='+project; 
+    }
+
+    // Function to get the content of a json file
+    function loadJSON(callback) {   
       var xobj = new XMLHttpRequest();
           xobj.overrideMimeType("application/json");
-      xobj.open('GET', 'static/checkData.json', true); // Replace 'my_data' with the path to your file
+      xobj.open('GET', checkDataPath, false); // Replace 'my_data' with the path to your file
       xobj.onreadystatechange = function () {
             if (xobj.readyState == 4 && xobj.status == "200") {
               // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
@@ -141,11 +150,7 @@
       xobj.send(null);  
     }
 
-    setTimeout(function() {
-      configTutorial(); 
-    }, 1000);
-
-    //Function test to check the configuration file (see the state of the method)
+    // //Function test to check the configuration file (see the state of the method)
     function configTutorial() {
       loadJSON(function(response) {
       // Parse JSON string into object
@@ -153,56 +158,160 @@
         //document.getElementById("teste").innerHTML = "Alternatives: "+ actual_JSON.alternatives + 
         //"<br/> Criteria: "+ actual_JSON.criterions + "<br/>Parameters: "+ actual_JSON.parameters + "<br/>Categories: " + actual_JSON.categories + "<br/>Performance Table: "+ actual_JSON.performancetables + "<br/>Profile Table: "+ actual_JSON.profiletables
         //alert(actual_JSON.categories);
-        // See if step 1 - criteria are done or not
+        // See if criteria are done or not
         if(actual_JSON.criterions){
-          document.getElementById("step1").style.color = 'red';
-          document.getElementById("step1").innerHTML += '&#10060';
+          document.getElementById("sectionsCriteria").style.backgroundColor = '#ff3333';
+          //document.getElementById("step1").innerHTML += '&#10060';
         } else{
-          document.getElementById("step1").style.color = 'green';
-          document.getElementById("step1").innerHTML += '&#9989';
+          document.getElementById("sectionsCriteria").style.backgroundColor = '#6fdc6f';
+          //document.getElementById("step1").innerHTML += '&#9989';
         }
-        // See if step 2 - alternatives are done or not
+        // See if alternatives are done or not
         if(actual_JSON.alternatives){
-          document.getElementById("step2").style.color = 'red';
-          document.getElementById("step2").innerHTML += '&#10060';
+          document.getElementById("sectionsAlternatives").style.backgroundColor = '#ff3333';
+          //document.getElementById("step2").innerHTML += '&#10060';
         } else{
-          document.getElementById("step2").style.color = 'green';
-          document.getElementById("step2").innerHTML += '&#9989';
+          document.getElementById("sectionsAlternatives").style.backgroundColor = '#6fdc6f';
+          //document.getElementById("step2").innerHTML += '&#9989';
         }
-        // See if step 3 - performance table is done or not
+        // See if performance table is done or not
         if(actual_JSON.performancetables){
-          document.getElementById("step3").style.color = 'red';
-          document.getElementById("step3").innerHTML += '&#10060';
+          document.getElementById("sectionsPerformances").style.backgroundColor = '#ff3333';
+          //document.getElementById("step3").innerHTML += '&#10060';
         } else{
-          document.getElementById("step3").style.color = 'green';
-          document.getElementById("step3").innerHTML += '&#9989';
+          document.getElementById("sectionsPerformances").style.backgroundColor = '#6fdc6f';
+          //document.getElementById("step3").innerHTML += '&#9989';
         }
-        // See if step 4 is all done or not
+        // See if are all done or not
         if(actual_JSON.categories || actual_JSON.parameters || actual_JSON.profiletables){
-          document.getElementById("step4").style.color = 'red';
-          document.getElementById("step4").innerHTML += '&#10060';
+          document.getElementById("sectionsConfigurations").style.backgroundColor = '#ff3333';
+          //document.getElementById("step4").innerHTML += '&#10060';
         } else{
-          document.getElementById("step4").style.color = 'green';
-          document.getElementById("step4").innerHTML += '&#9989';
+          document.getElementById("sectionsConfigurations").style.backgroundColor = '#6fdc6f';
+          //document.getElementById("step4").innerHTML += '&#9989';
         }
         // See if step 5, 6 and 7 - categories, parameters and profiles are done or not
-        if(actual_JSON.categories){
-          document.getElementById("step5").style.color = 'red';
-        } else{
-          document.getElementById("step5").style.color = 'green';
-        }
-        if(actual_JSON.parameters){
-          document.getElementById("step6").style.color = 'red';
-        } else{
-          document.getElementById("step6").style.color = 'green';
-        }
-        if(actual_JSON.profiletables){
-          document.getElementById("step7").style.color = 'red';
-        } else{
-          document.getElementById("step7").style.color = 'green';
-        }
+        // if(actual_JSON.categories){
+        //   document.getElementById("step5").style.color = 'red';
+        // } else{
+        //   document.getElementById("step5").style.color = 'green';
+        // }
+        // if(actual_JSON.parameters){
+        //   document.getElementById("step6").style.color = 'red';
+        // } else{
+        //   document.getElementById("step6").style.color = 'green';
+        // }
+        // if(actual_JSON.profiletables){
+        //   document.getElementById("step7").style.color = 'red';
+        // } else{
+        //   document.getElementById("step7").style.color = 'green';
+        // }
      });
     }
+
+  setTimeout(function() {
+    configTutorial(); 
+    loadXMLDoc();
+  }, 1500);
+
+  var resultsFileExists = false;
+  var messageFileExists = false;
+
+  // Load file result
+  function loadXMLDoc() {
+    $.ajax({
+        type: 'GET',
+        url: resultsPath,
+        async: false,
+        success: function() {
+          resultsFileExists = true;
+          //alert('Page found.');
+        },  
+        error: function() {
+          resultsFileExists = false;
+          //alert('Page not found.');
+        }
+    });
+    $.ajax({
+        type: 'GET',
+        url: messagePath,
+        async: false,
+        success: function() {
+          messageFileExists = true; 
+          //alert('Page found.');
+        },  
+        error: function() {
+          messageFileExists = false; 
+          //alert('Page not found.');
+        }
+    });
+    console.log('Results file exists? ' + resultsFileExists);
+    console.log('Error message file exists? ' + messageFileExists);
+    if(resultsFileExists){
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.open("GET", resultsPath, true);  
+      xmlhttp.onreadystatechange = function() {
+          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+              showResults(xmlhttp);
+          }
+        };
+      xmlhttp.send(null);
+    }else if(messageFileExists){
+      // If results file does not exist it means there are errors during the method execution, open the error message
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.open("GET", messagePath, true);  
+      xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+          showErrorMessage(xmlhttp);
+        }
+      };
+      xmlhttp.send(null);
+    }else{
+      // Do nothing because files don't exist (they may be problems with other functions before executing the electre tri-c method)
+      // TODO: show the errors from other functions or executing the method is not allowed if the other methods give error or if
+      // there are missing data from the project and that causes error
+    }
+  }
+
+  // Get content from assignments.xml, which has the results
+  function showResults(xml) {
+    var alternatives, categories, xmlDoc;
+    // Get tbody from result table
+    var table = document.getElementById("resultsTable").getElementsByTagName('tbody')[0];
+    xmlDoc = xml.responseXML;
+    // Get all alternatives ids
+    alternatives = xmlDoc.getElementsByTagName("alternativeID");
+    // Get all categories min and max
+    categories = xmlDoc.getElementsByTagName("categoryID");
+    // Auxiliar to get the right categories for each alternative
+    var categoryNum = 0;
+    for (var i = 0; i< alternatives.length; i++) {
+      //Insert new row to the table and the results for each cell according to the alternative
+      var row = table.insertRow(i);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      cell1.innerHTML = alternatives[i].childNodes[0].nodeValue;
+      cell2.innerHTML = categories[categoryNum].childNodes[0].nodeValue;
+      cell3.innerHTML = categories[categoryNum+1].childNodes[0].nodeValue;
+      categoryNum = categoryNum + 2;
+    }
+    document.getElementById("resultsTable").style.display = "inline-table";
+  }
+
+  // Get content from messages.xml
+  function showErrorMessage(xml){
+    var errorMessage, txt, xmlDoc;
+    var paragraph = document.getElementById("errorMessage");
+    xmlDoc = xml.responseXML;
+    txt = '';
+    errorMessage = xmlDoc.getElementsByTagName("text");
+    for (var i = 0; i< errorMessage.length; i++) {
+      txt += errorMessage[i].childNodes[0].nodeValue + ' <br/>';
+    }
+    paragraph.innerHTML = txt;
+    document.getElementById("errorMessage").style.display = "block";
+  }
   </script>
 </body>
 </html>

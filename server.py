@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 app = Flask(__name__)
 
 
@@ -39,11 +39,108 @@ __version__ = '0.2.0'
 # Executes when the page is loaded
 @app.route('/')
 def index():
-	#Get project id from url parameter projectId
-	projectID = request.args.get('projectId')
-	print (projectID)
-	# Create a json file that indicates the state of the Electre Tri-C method (if is executable or not)
-	checkData = {}
+	# #Get project id from url parameter projectId
+	# projectID = request.args.get('projectId')
+	# # Create a json file that indicates the state of the Electre Tri-C method (if is executable or not)
+ # 	checkData = {}
+	# # Connection to Mongo DB
+	# try:
+	#     connection = pymongo.MongoClient('mongodb://cristinav:mbdcristinav@vps80648.ovh.net/cristinav_bd')
+	#     print "Connected successfully!!!"
+	# except pymongo.errors.ConnectionFailure, e:
+	#    print "Could not connect to MongoDB: %s" % e 
+	# db = connection['cristinav_bd']
+	# # Get projects collection
+	# projects = db['projects']
+	# # Set project id from the url parameter as the project we need to get the data to execute the method
+	# project_id = projectID
+	# # Get project with projectID as id
+	# project = projects.find_one({"_id" : ObjectId(project_id) })
+	# # Check if the project as all the data necessary and not empty or need to fill first
+	# empty = len(project["alternatives"]) == 0
+	# collectionName = "alternatives"
+	# checkData[collectionName] = empty
+	# empty = len(project["criteria"]) == 0
+	# collectionName = "criterions"
+	# checkData[collectionName] = empty
+	# empty = len(project["parameters"]) == 0
+	# collectionName = "parameters"
+	# checkData[collectionName] = empty
+	# empty = len(project["categories"]) == 0
+	# collectionName = "categories"
+	# checkData[collectionName] = empty
+	# empty = len(project["performancetables"]) == 0
+	# collectionName = "performancetables"
+	# checkData[collectionName] = empty
+	# empty = len(project["profiletables"]) == 0
+	# collectionName = "profiletables"
+	# checkData[collectionName] = empty
+	# # Convert the checkData so it can be saved into a json file
+	# checkDataDumps = json.dumps(checkData)
+	# with open('static/checkData.json', 'w') as fp:
+	# 	fp.write(checkDataDumps) 
+	return render_template('template.html')
+# 	#Get project id from url parameter projectId
+# 	projectID = request.args.get('projectId')
+# 	print (projectID)
+# 	# Create a json file that indicates the state of the Electre Tri-C method (if is executable or not)
+# 	checkData = {}
+# 	# Connection to Mongo DB
+# 	try:
+# 	    connection = pymongo.MongoClient('mongodb://cristinav:mbdcristinav@vps80648.ovh.net/cristinav_bd')
+# 	    print "Connected successfully!!!"
+# 	except pymongo.errors.ConnectionFailure, e:
+# 	   print "Could not connect to MongoDB: %s" % e 
+# 	db = connection['cristinav_bd']
+# 	# Get projects collection
+# 	projects = db['projects']
+# 	# Set project id from the url parameter as the project we need to get the data to execute the method
+# 	project_id = projectID
+# 	# Get project with projectID as id
+# 	project = projects.find_one({"_id" : ObjectId(project_id) })
+# 	#print len(project["alternatives"]) #prints the number of alternatives that exists in the array
+# 	#collection = db['alternatives'] 
+# 	#print(collection.count() == 0) # checks if collection is empty
+# 	#print(collection.count()) # returns how many alternatives are in the collections
+# 	# Check if the project as all the data necessary and not empty or need to fill first
+# 	empty = len(project["alternatives"]) == 0
+# 	collectionName = "alternatives"
+# 	checkData[collectionName] = empty
+# 	#collection = db['criterions'] 
+# 	empty = len(project["criteria"]) == 0
+# 	collectionName = "criterions"
+# 	checkData[collectionName] = empty
+# 	#collection = db['parameters'] 
+# 	empty = len(project["parameters"]) == 0
+# 	collectionName = "parameters"
+# 	checkData[collectionName] = empty
+# 	#collection = db['categories'] 
+# 	empty = len(project["categories"]) == 0
+# 	collectionName = "categories"
+# 	checkData[collectionName] = empty
+# 	#collection = db['performancetables'] 
+# 	empty = len(project["performancetables"]) == 0
+# 	collectionName = "performancetables"
+# 	checkData[collectionName] = empty
+# 	#collection = db['profiletables'] 
+# 	empty = len(project["profiletables"]) == 0
+# 	collectionName = "profiletables"
+# 	checkData[collectionName] = empty
+# 	print(checkData)
+# 	# Convert the checkData so it can be saved into a json file
+# 	checkDataDumps = json.dumps(checkData)
+# 	with open('checkData.json', 'w') as fp:
+# 		fp.write(checkDataDumps)  
+# 	with open('static/checkData.json', 'w') as fp:
+# 		fp.write(checkDataDumps)  			
+# 	return render_template('template.html')
+
+# Go back to project section
+@app.route('/projectSection/')
+def projectSection():
+	#Get user name from url parameter projectId
+	name = request.args.get('n')
+	print (name)
 	# Connection to Mongo DB
 	try:
 	    connection = pymongo.MongoClient('mongodb://cristinav:mbdcristinav@vps80648.ovh.net/cristinav_bd')
@@ -52,54 +149,20 @@ def index():
 	   print "Could not connect to MongoDB: %s" % e 
 	db = connection['cristinav_bd']
 	# Get projects collection
-	projects = db['projects']
-	# Set project id from the url parameter as the project we need to get the data to execute the method
-	project_id = projectID
-	# Get project with projectID as id
-	project = projects.find_one({"_id" : ObjectId(project_id) })
-	#print len(project["alternatives"]) #prints the number of alternatives that exists in the array
-	#collection = db['alternatives'] 
-	#print(collection.count() == 0) # checks if collection is empty
-	#print(collection.count()) # returns how many alternatives are in the collections
-	# Check if the project as all the data necessary and not empty or need to fill first
-	empty = len(project["alternatives"]) == 0
-	collectionName = "alternatives"
-	checkData[collectionName] = empty
-	#collection = db['criterions'] 
-	empty = len(project["criteria"]) == 0
-	collectionName = "criterions"
-	checkData[collectionName] = empty
-	#collection = db['parameters'] 
-	empty = len(project["parameters"]) == 0
-	collectionName = "parameters"
-	checkData[collectionName] = empty
-	#collection = db['categories'] 
-	empty = len(project["categories"]) == 0
-	collectionName = "categories"
-	checkData[collectionName] = empty
-	#collection = db['performancetables'] 
-	empty = len(project["performancetables"]) == 0
-	collectionName = "performancetables"
-	checkData[collectionName] = empty
-	#collection = db['profiletables'] 
-	empty = len(project["profiletables"]) == 0
-	collectionName = "profiletables"
-	checkData[collectionName] = empty
-	print(checkData)
-	# Convert the checkData so it can be saved into a json file
-	checkDataDumps = json.dumps(checkData)
-	with open('checkData.json', 'w') as fp:
-		fp.write(checkDataDumps)  
-	with open('static/checkData.json', 'w') as fp:
-		fp.write(checkDataDumps)  			
-	return render_template('template.html')
-
+	users = db['users']
+	rightUser = users.find_one({"username" : name })
+	print rightUser['_id']
+	userId = str(rightUser['_id'])
+	url = 'http://vps288667.ovh.net:3901/projects.html?userId='+userId
+	return redirect(url, code=302)
 
 # Execute method Electre Tri C
 @app.route('/electreTriC/')
 def electreTriC():
 	#Get project id from url parameter projectId
 	projectID = request.args.get('projectId')
+	# Create a json file that indicates the state of the Electre Tri-C method (if is executable or not)
+ 	checkData = {}
 	# Connection to Mongo DB
 	try:
 	    connection = pymongo.MongoClient('mongodb://cristinav:mbdcristinav@vps80648.ovh.net/cristinav_bd')
@@ -113,7 +176,7 @@ def electreTriC():
 	projects = db['projects']
 	# Set project id from the url parameter as the project we need to get the data to execute the method
 	project_id = projectID
-	userProject = users.find_one({"_id" : ObjectId('576b2f353b4de674060fd244') })
+	#userProject = users.find_one({"_id" : ObjectId('576b2f353b4de674060fd244') })
 	# Lists to save the data from projectId
 	alternativesList = [];
 	criteriaList = [];
@@ -123,6 +186,27 @@ def electreTriC():
 	profiletablesList = [];
 	# Get project with projectID as id
 	project = projects.find_one({"_id" : ObjectId(project_id) })
+	# Check if the project as all the data necessary and not empty or need to fill first
+	empty = len(project["alternatives"]) == 0
+	collectionName = "alternatives"
+	checkData[collectionName] = empty
+	empty = len(project["criteria"]) == 0
+	collectionName = "criterions"
+	checkData[collectionName] = empty
+	empty = len(project["parameters"]) == 0
+	collectionName = "parameters"
+	checkData[collectionName] = empty
+	empty = len(project["categories"]) == 0
+	collectionName = "categories"
+	checkData[collectionName] = empty
+	empty = len(project["performancetables"]) == 0
+	collectionName = "performancetables"
+	checkData[collectionName] = empty
+	empty = len(project["profiletables"]) == 0
+	collectionName = "profiletables"
+	checkData[collectionName] = empty
+	# Convert the checkData so it can be saved into a json file
+	checkDataDumps = json.dumps(checkData)
 	# Create alternatives.json
 	# Get alternatives data from the project
 	for alternative in project["alternatives"]:
@@ -628,6 +712,34 @@ def electreTriC():
 	os.system('python ./electre_diviz/cutRelationCrisp/cutRelationCrisp.py -i ./inputsOutputs/cutRelationCrisp/in -o ./inputsOutputs/cutRelationCrisp/out')  
 	shutil.copy2('./inputsOutputs/cutRelationCrisp/out/outranking.xml', './inputsOutputs/electreTriC/in/outranking.xml')
 	os.system('python ./electre_diviz/ElectreTri-CClassAssignments/ElectreTri-CClassAssignments.py -i ./inputsOutputs/electreTriC/in -o ./inputsOutputs/electreTriC/out')  
+	pathId = './static/' + str(projectID)
+	chechDataFileName = pathId + '/checkData.json'
+	#print pathId
+	if os.path.exists(pathId):
+		if os.path.exists(chechDataFileName):
+			os.remove(chechDataFileName)
+		paths = pathId + '/assignments.xml'
+		if os.path.exists(paths):
+			# Unliks the file path because only deleting does not make the file disappear, it still be access by the XMLHttpRequest
+			os.unlink(paths)
+			os.remove(paths)
+		paths = pathId + '/messages.xml'
+		if os.path.exists(paths):
+			os.remove(paths)
+		shutil.rmtree(pathId) 
+	os.makedirs(pathId)
+	with open(chechDataFileName, 'w') as fp:
+		fp.write(checkDataDumps) 
+	try:
+		if os.path.exists('./inputsOutputs/electreTriC/out/assignments.xml'):
+			shutil.copy2('./inputsOutputs/electreTriC/out/assignments.xml', pathId)
+	except OSError:
+		pass
+	try:
+		shutil.copy2('./inputsOutputs/electreTriC/out/messages.xml', pathId)
+	except OSError:
+		pass
+	print 'Method executed and files saved.'
 	return render_template('template.html')
 
 # Read final results obtained by the method Electre Tri C
@@ -661,6 +773,25 @@ def readXMLFile():
 def my_link():
 	os.remove('./inputsOutputs/electreTriC/out/assignments.xml')
 	return 'Click.'
+
+@app.route('/createDir/')
+def createDir(): 
+	projectID = request.args.get('projectId')
+	pathId = './static/' + str(projectID)
+	#print pathId
+	if os.path.exists(pathId):
+		shutil.rmtree(pathId) 
+	os.makedirs(pathId)
+	try:
+		shutil.copy2('./inputsOutputs/electreTriC/out/assignments.xml', pathId)
+	except OSError:
+		pass
+	try:
+		shutil.copy2('./inputsOutputs/electreTriC/out/messages.xml', pathId)
+	except OSError:
+		pass
+	print 'Done creating folder and files...'
+	return render_template('template.html')
 
 @app.route('/copiar/')
 def copiar():
