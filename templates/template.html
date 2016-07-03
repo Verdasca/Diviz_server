@@ -9,7 +9,6 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
   <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
-  <link rel="icon" type="text/json" href="{{ url_for('static', filename='checkData.json') }}">
   
   <!-- JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js" type="text/javascript"></script>
@@ -71,10 +70,13 @@
   <script type="text/javascript">
     var projectId = getParameterByName('projectId'); 
     var projectName = getParameterByName('project');
-    var username = getParameterByName('n'); 
-    var resultsPath = 'http://vps288667.ovh.net:5010/static/' + projectId + '/assignments.xml'; 
-    var messagePath = 'http://vps288667.ovh.net:5010/static/' + projectId + '/messages.xml'; 
-    var checkDataPath = 'http://vps288667.ovh.net:5010/static/' + projectId + '/checkData.json'; 
+    var username = getParameterByName('n');  
+    //var resultsPath = 'http://localhost:5000/static/' + projectId + '/assignments.xml?' + new Date().getTime(); 
+    //var messagePath = 'http://localhost:5000/static/' + projectId + '/messages.xml?' + new Date().getTime();  
+    //var checkDataPath = 'http://localhost:5000/static/' + projectId + '/checkData.json?' + new Date().getTime();  
+    var resultsPath = 'http://vps288667.ovh.net:5010/static/' + projectId + '/assignments.xml?' + new Date().getTime(); 
+    var messagePath = 'http://vps288667.ovh.net:5010/static/' + projectId + '/messages.xml?' + new Date().getTime();  
+    var checkDataPath = 'http://vps288667.ovh.net:5010/static/' + projectId + '/checkData.json?' + new Date().getTime();
     document.getElementById("userName").innerHTML = 'User: ' + username;
     document.getElementById("aSectionsDescription").innerHTML = projectName + '<br> Description';
 
@@ -138,8 +140,13 @@
 
     // Function to get the content of a json file
     function loadJSON(callback) {   
-      var xobj = new XMLHttpRequest();
-          xobj.overrideMimeType("application/json");
+      //Perform the Ajax request
+      window.XMLHttpRequest
+      {
+        xobj = new XMLHttpRequest();
+      }
+      //var xobj = new XMLHttpRequest();
+      xobj.overrideMimeType("application/json");
       xobj.open('GET', checkDataPath, false); // Replace 'my_data' with the path to your file
       xobj.onreadystatechange = function () {
             if (xobj.readyState == 4 && xobj.status == "200") {
@@ -147,7 +154,7 @@
               callback(xobj.responseText);
             }
       };
-      xobj.send(null);  
+      xobj.send();  
     }
 
     // //Function test to check the configuration file (see the state of the method)
@@ -214,13 +221,16 @@
     loadXMLDoc();
   }, 1500);
 
+//setInterval("configTutorial()", 5000);
+//setInterval("loadXMLDoc()", 5000);
+
   var resultsFileExists = false;
   var messageFileExists = false;
 
   // Load file result
   function loadXMLDoc() {
     $.ajax({
-        type: 'GET',
+        type: 'HEAD',
         url: resultsPath,
         async: false,
         success: function() {
@@ -233,7 +243,7 @@
         }
     });
     $.ajax({
-        type: 'GET',
+        type: 'HEAD',
         url: messagePath,
         async: false,
         success: function() {
@@ -248,24 +258,34 @@
     console.log('Results file exists? ' + resultsFileExists);
     console.log('Error message file exists? ' + messageFileExists);
     if(resultsFileExists){
-      var xmlhttp = new XMLHttpRequest();
+      //Perform the Ajax request
+      window.XMLHttpRequest
+      {
+        xmlhttp = new XMLHttpRequest();
+      }
+      //var xmlhttp = new XMLHttpRequest();
       xmlhttp.open("GET", resultsPath, true);  
       xmlhttp.onreadystatechange = function() {
           if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
               showResults(xmlhttp);
           }
         };
-      xmlhttp.send(null);
+      xmlhttp.send();
     }else if(messageFileExists){
       // If results file does not exist it means there are errors during the method execution, open the error message
-      var xmlhttp = new XMLHttpRequest();
+      //Perform the Ajax request
+      window.XMLHttpRequest
+      {
+        xmlhttp = new XMLHttpRequest();
+      }
+      //var xmlhttp = new XMLHttpRequest();
       xmlhttp.open("GET", messagePath, true);  
       xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
           showErrorMessage(xmlhttp);
         }
       };
-      xmlhttp.send(null);
+      xmlhttp.send();
     }else{
       // Do nothing because files don't exist (they may be problems with other functions before executing the electre tri-c method)
       // TODO: show the errors from other functions or executing the method is not allowed if the other methods give error or if

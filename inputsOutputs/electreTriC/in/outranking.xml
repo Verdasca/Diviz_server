@@ -6,7 +6,15 @@
   <pairs>
     <pair>
       <initial>
-        <alternativeID>a1</alternativeID>
+        <alternativeID>a11</alternativeID>
+      </initial>
+      <terminal>
+        <alternativeID>b1</alternativeID>
+      </terminal>
+    </pair>
+    <pair>
+      <initial>
+        <alternativeID>a11</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b2</alternativeID>
@@ -14,7 +22,23 @@
     </pair>
     <pair>
       <initial>
-        <alternativeID>a1</alternativeID>
+        <alternativeID>a22</alternativeID>
+      </initial>
+      <terminal>
+        <alternativeID>b1</alternativeID>
+      </terminal>
+    </pair>
+    <pair>
+      <initial>
+        <alternativeID>a22</alternativeID>
+      </initial>
+      <terminal>
+        <alternativeID>b2</alternativeID>
+      </terminal>
+    </pair>
+    <pair>
+      <initial>
+        <alternativeID>a22</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b3</alternativeID>
@@ -22,15 +46,7 @@
     </pair>
     <pair>
       <initial>
-        <alternativeID>a1</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b4</alternativeID>
-      </terminal>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>a33</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b1</alternativeID>
@@ -38,7 +54,7 @@
     </pair>
     <pair>
       <initial>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>a33</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b2</alternativeID>
@@ -46,18 +62,82 @@
     </pair>
     <pair>
       <initial>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>a33</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>b4</alternativeID>
+        <alternativeID>b3</alternativeID>
       </terminal>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a3</alternativeID>
+        <alternativeID>a44</alternativeID>
       </initial>
       <terminal>
+        <alternativeID>b2</alternativeID>
+      </terminal>
+    </pair>
+    <pair>
+      <initial>
+        <alternativeID>a44</alternativeID>
+      </initial>
+      <terminal>
+        <alternativeID>b3</alternativeID>
+      </terminal>
+    </pair>
+    <pair>
+      <initial>
         <alternativeID>b1</alternativeID>
+      </initial>
+      <terminal>
+        <alternativeID>a11</alternativeID>
+      </terminal>
+    </pair>
+    <pair>
+      <initial>
+        <alternativeID>b1</alternativeID>
+      </initial>
+      <terminal>
+        <alternativeID>a22</alternativeID>
+      </terminal>
+    </pair>
+    <pair>
+      <initial>
+        <alternativeID>b2</alternativeID>
+      </initial>
+      <terminal>
+        <alternativeID>a11</alternativeID>
+      </terminal>
+    </pair>
+    <pair>
+      <initial>
+        <alternativeID>b2</alternativeID>
+      </initial>
+      <terminal>
+        <alternativeID>a22</alternativeID>
+      </terminal>
+    </pair>
+    <pair>
+      <initial>
+        <alternativeID>b3</alternativeID>
+      </initial>
+      <terminal>
+        <alternativeID>a11</alternativeID>
+      </terminal>
+    </pair>
+    <pair>
+      <initial>
+        <alternativeID>b3</alternativeID>
+      </initial>
+      <terminal>
+        <alternativeID>a22</alternativeID>
+      </terminal>
+    </pair>
+    <pair>
+      <initial>
+        <alternativeID>b3</alternativeID>
+      </initial>
+      <terminal>
+        <alternativeID>a33</alternativeID>
       </terminal>
     </pair>
   </pairs>

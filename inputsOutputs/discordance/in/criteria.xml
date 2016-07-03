@@ -1,4 +1,77 @@
 <?xml version="1.0" ?>
 <xmcda:XMCDA xmlns:xmcda="http://www.decision-deck.org/2009/XMCDA-2.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2009/XMCDA-2.1.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.1.0.xsd">
-  <criteria/>
+  <criteria>
+    <criterion id="g5" name="">
+      <scale>
+        <quantitative>
+          <preferenceDirection>min</preferenceDirection>
+        </quantitative>
+      </scale>
+      <thresholds>
+        <threshold mcdaConcept="indifference">
+          <constant>
+            <real>6</real>
+          </constant>
+        </threshold>
+        <threshold mcdaConcept="preference">
+          <constant>
+            <real>7</real>
+          </constant>
+        </threshold>
+        <threshold mcdaConcept="veto">
+          <constant>
+            <real>5</real>
+          </constant>
+        </threshold>
+      </thresholds>
+    </criterion>
+    <criterion id="g6" name="">
+      <scale>
+        <quantitative>
+          <preferenceDirection>max</preferenceDirection>
+        </quantitative>
+      </scale>
+      <thresholds>
+        <threshold mcdaConcept="indifference">
+          <constant>
+            <real>6</real>
+          </constant>
+        </threshold>
+        <threshold mcdaConcept="preference">
+          <constant>
+            <real>7</real>
+          </constant>
+        </threshold>
+        <threshold mcdaConcept="veto">
+          <constant>
+            <real>43</real>
+          </constant>
+        </threshold>
+      </thresholds>
+    </criterion>
+    <criterion id="g7" name="">
+      <scale>
+        <quantitative>
+          <preferenceDirection>max</preferenceDirection>
+        </quantitative>
+      </scale>
+      <thresholds>
+        <threshold mcdaConcept="indifference">
+          <constant>
+            <real>2</real>
+          </constant>
+        </threshold>
+        <threshold mcdaConcept="preference">
+          <constant>
+            <real>6</real>
+          </constant>
+        </threshold>
+        <threshold mcdaConcept="veto">
+          <constant>
+            <real>0</real>
+          </constant>
+        </threshold>
+      </thresholds>
+    </criterion>
+  </criteria>
 </xmcda:XMCDA>

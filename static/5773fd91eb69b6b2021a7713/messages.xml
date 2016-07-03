@@ -3,18 +3,8 @@
   xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
   xsi:schemaLocation='http://www.decision-deck.org/2012/XMCDA-2.2.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.2.0.xsd'>
 <methodMessages>
-  <errorMessage>
-    <text><![CDATA[InputDataError: Validation error with the file: 'classes.xml'.]]></text>
-  </errorMessage>
   <logMessage>
-    <text><![CDATA[Traceback (most recent call last):
-  File "./electre_diviz/ElectreTri-CClassAssignments/ElectreTri-CClassAssignments.py", line 114, in main
-    comparison_with='central_profiles')
-  File "/Users/cristinaverdasca/Desktop/Diviz_server/electre_diviz/ElectreTri-CClassAssignments/common.py", line 685, in get_input_data
-    trees = _get_trees(input_dir, filenames)
-  File "/Users/cristinaverdasca/Desktop/Diviz_server/electre_diviz/ElectreTri-CClassAssignments/common.py", line 131, in _get_trees
-    .format(f))
-InputDataError: Validation error with the file: 'classes.xml'.]]></text>
+    <text><![CDATA[Everything OK.]]></text>
   </logMessage>
 </methodMessages>
 </xmcda:XMCDA>

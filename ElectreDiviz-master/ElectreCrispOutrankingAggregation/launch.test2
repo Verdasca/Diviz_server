@@ -1,1 +1,0 @@
-python ElectreCrispOutrankingAggregation.py -i tests/in2_profiles -o tests/out2

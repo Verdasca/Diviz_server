@@ -1,1 +1,1 @@
-{"parameters": false, "alternatives": false, "criterions": true, "profiletables": true, "performancetables": true, "categories": true}
+{"parameters": false, "alternatives": false, "criterions": false, "profiletables": false, "performancetables": false, "categories": false}

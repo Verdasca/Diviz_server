@@ -6,840 +6,228 @@
   <pairs>
     <pair>
       <initial>
-        <alternativeID>a1</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b4</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a1</alternativeID>
+        <alternativeID>a11</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b1</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a1</alternativeID>
+        <alternativeID>a11</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b2</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a1</alternativeID>
+        <alternativeID>a11</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b3</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a2</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b4</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>a22</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b1</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>a22</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b2</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>a22</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b3</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a3</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b4</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a3</alternativeID>
+        <alternativeID>a33</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b1</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>0.526315789474</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a3</alternativeID>
+        <alternativeID>a33</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b2</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a3</alternativeID>
+        <alternativeID>a33</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b3</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a4</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b4</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a4</alternativeID>
+        <alternativeID>a44</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b1</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
+        <value id="g5">
           <real>1.0</real>
         </value>
-        <value id="g4 - Parking">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a4</alternativeID>
+        <alternativeID>a44</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b2</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a4</alternativeID>
+        <alternativeID>a44</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b3</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a6</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b4</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a6</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b1</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a6</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b2</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a6</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b3</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a5</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b4</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a5</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b1</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a5</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b2</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a5</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b3</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b4</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a1</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b4</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a2</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b4</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a3</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b4</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a4</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b4</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a6</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b4</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a5</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
@@ -849,25 +237,16 @@
         <alternativeID>b1</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a1</alternativeID>
+        <alternativeID>a11</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
@@ -877,25 +256,16 @@
         <alternativeID>b1</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>a22</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>0.526315789474</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
@@ -905,25 +275,16 @@
         <alternativeID>b1</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a3</alternativeID>
+        <alternativeID>a33</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
@@ -933,81 +294,16 @@
         <alternativeID>b1</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a4</alternativeID>
+        <alternativeID>a44</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
+        <value id="g6">
+          <real>0.0833333333333</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b1</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a6</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b1</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a5</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
@@ -1017,25 +313,16 @@
         <alternativeID>b2</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a1</alternativeID>
+        <alternativeID>a11</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>1.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>0.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
@@ -1045,25 +332,16 @@
         <alternativeID>b2</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>a22</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
@@ -1073,25 +351,16 @@
         <alternativeID>b2</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a3</alternativeID>
+        <alternativeID>a33</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
@@ -1101,81 +370,16 @@
         <alternativeID>b2</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a4</alternativeID>
+        <alternativeID>a44</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b2</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a6</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b2</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a5</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
@@ -1185,25 +389,16 @@
         <alternativeID>b3</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a1</alternativeID>
+        <alternativeID>a11</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
@@ -1213,25 +408,16 @@
         <alternativeID>b3</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>a22</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
@@ -1241,25 +427,16 @@
         <alternativeID>b3</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a3</alternativeID>
+        <alternativeID>a33</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>
@@ -1269,81 +446,16 @@
         <alternativeID>b3</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a4</alternativeID>
+        <alternativeID>a44</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="g5">
           <real>0.0</real>
         </value>
-        <value id="g2 - Location">
+        <value id="g6">
           <real>0.0</real>
         </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b3</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a6</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
-          <real>0.0</real>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b3</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a5</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <real>0.0</real>
-        </value>
-        <value id="g2 - Location">
-          <real>0.0</real>
-        </value>
-        <value id="g3 - Schedule">
-          <real>0.0</real>
-        </value>
-        <value id="g4 - Parking">
-          <real>0.0</real>
-        </value>
-        <value id="g5 - Culture">
-          <real>1.0</real>
-        </value>
-        <value id="g6 - Menu Variety">
+        <value id="g7">
           <real>0.0</real>
         </value>
       </values>

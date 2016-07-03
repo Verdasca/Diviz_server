@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 app = Flask(__name__)
 
 
@@ -155,6 +155,12 @@ def projectSection():
 	userId = str(rightUser['_id'])
 	url = 'http://vps288667.ovh.net:3901/projects.html?userId='+userId
 	return redirect(url, code=302)
+
+
+def get_data(path):
+    response = requests.get(path+"/checkData.json")
+    return response
+
 
 # Execute method Electre Tri C
 @app.route('/electreTriC/')
@@ -436,8 +442,11 @@ def electreTriC():
 	# Create parameters tag
 	methodParameters = docParameters.createElement('methodParameters')
 	xmcdaParameters.appendChild(methodParameters)
-	# Create the parameter tag 
-	credibility = data[0]["credibility"]
+	if (len(data) == 0):
+		credibility = 0
+	else:
+		# Create the parameter tag 
+		credibility = data[0]["credibility"]
 	parameter = docParameters.createElement('parameter')
 	parameter.setAttribute('name', 'comparison_with')
 	value = docParameters.createElement('value')
@@ -722,21 +731,29 @@ def electreTriC():
 		if os.path.exists(paths):
 			# Unliks the file path because only deleting does not make the file disappear, it still be access by the XMLHttpRequest
 			os.unlink(paths)
-			os.remove(paths)
+		#if os.path.exists(paths):
+			#os.remove(paths)
 		paths = pathId + '/messages.xml'
 		if os.path.exists(paths):
 			os.remove(paths)
 		shutil.rmtree(pathId) 
 	os.makedirs(pathId)
 	with open(chechDataFileName, 'w') as fp:
-		fp.write(checkDataDumps) 
+			fp.write(checkDataDumps) 
+	# pp = 'rm -rf ' + pathId
+	# #os.system(pp)
+	# if not os.path.exists(pathId):
+	# 	os.makedirs(pathId)
+	# if os.path.exists(chechDataFileName):
+	# 	with open(chechDataFileName, 'w') as fp:
+	# 		fp.write(checkDataDumps) 
 	try:
 		if os.path.exists('./inputsOutputs/electreTriC/out/assignments.xml'):
-			shutil.copy2('./inputsOutputs/electreTriC/out/assignments.xml', pathId)
+			shutil.copy2('./inputsOutputs/electreTriC/out/assignments.xml', pathId+'/assignments.xml')
 	except OSError:
 		pass
 	try:
-		shutil.copy2('./inputsOutputs/electreTriC/out/messages.xml', pathId)
+		shutil.copy2('./inputsOutputs/electreTriC/out/messages.xml', pathId+'/messages.xml')
 	except OSError:
 		pass
 	print 'Method executed and files saved.'

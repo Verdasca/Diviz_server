@@ -3,16 +3,8 @@
   xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
   xsi:schemaLocation='http://www.decision-deck.org/2012/XMCDA-2.2.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.2.0.xsd'>
 <methodMessages>
-  <errorMessage>
-    <text><![CDATA[InputDataError: File 'categories_profiles.xml' doesn't contain valid data for this method.]]></text>
-  </errorMessage>
   <logMessage>
-    <text><![CDATA[Traceback (most recent call last):
-  File "./electre_diviz/cutRelationCrisp/cutRelationCrisp.py", line 73, in main
-    d = get_input_data(input_dir, filenames, params)
-  File "/Users/cristinaverdasca/Desktop/Diviz_server/electre_diviz/cutRelationCrisp/common.py", line 710, in get_input_data
-    raise InputDataError(msg)
-InputDataError: File 'categories_profiles.xml' doesn't contain valid data for this method.]]></text>
+    <text><![CDATA[Everything OK.]]></text>
   </logMessage>
 </methodMessages>
 </xmcda:XMCDA>

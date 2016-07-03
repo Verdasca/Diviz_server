@@ -3,18 +3,8 @@
   xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
   xsi:schemaLocation='http://www.decision-deck.org/2012/XMCDA-2.2.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.2.0.xsd'>
 <methodMessages>
-  <errorMessage>
-    <text><![CDATA[InputDataError: Validation error with the file: 'performance_table.xml'.]]></text>
-  </errorMessage>
   <logMessage>
-    <text><![CDATA[Traceback (most recent call last):
-  File "./electre_diviz/ElectreDiscordance/ElectreDiscordance.py", line 130, in main
-    d = get_input_data(input_dir, filenames, params)
-  File "/Users/cristinaverdasca/Desktop/Diviz_server/electre_diviz/ElectreDiscordance/common.py", line 685, in get_input_data
-    trees = _get_trees(input_dir, filenames)
-  File "/Users/cristinaverdasca/Desktop/Diviz_server/electre_diviz/ElectreDiscordance/common.py", line 131, in _get_trees
-    .format(f))
-InputDataError: Validation error with the file: 'performance_table.xml'.]]></text>
+    <text><![CDATA[Everything OK.]]></text>
   </logMessage>
 </methodMessages>
 </xmcda:XMCDA>

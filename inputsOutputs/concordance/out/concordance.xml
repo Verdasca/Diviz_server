@@ -6,62 +6,7 @@
   <pairs>
     <pair>
       <initial>
-        <alternativeID>a1</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b4</alternativeID>
-      </terminal>
-      <value>
-        <real>0.774225774226</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a1</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b1</alternativeID>
-      </terminal>
-      <value>
-        <real>0.666333666334</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a1</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b2</alternativeID>
-      </terminal>
-      <value>
-        <real>0.892107892108</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a1</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b3</alternativeID>
-      </terminal>
-      <value>
-        <real>0.622597741242</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a2</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b4</alternativeID>
-      </terminal>
-      <value>
-        <real>0.797754876702</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>a11</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b1</alternativeID>
@@ -72,7 +17,40 @@
     </pair>
     <pair>
       <initial>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>a11</alternativeID>
+      </initial>
+      <terminal>
+        <alternativeID>b2</alternativeID>
+      </terminal>
+      <value>
+        <real>0.816666666667</real>
+      </value>
+    </pair>
+    <pair>
+      <initial>
+        <alternativeID>a11</alternativeID>
+      </initial>
+      <terminal>
+        <alternativeID>b3</alternativeID>
+      </terminal>
+      <value>
+        <real>0.266666666667</real>
+      </value>
+    </pair>
+    <pair>
+      <initial>
+        <alternativeID>a22</alternativeID>
+      </initial>
+      <terminal>
+        <alternativeID>b1</alternativeID>
+      </terminal>
+      <value>
+        <real>1.0</real>
+      </value>
+    </pair>
+    <pair>
+      <initial>
+        <alternativeID>a22</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b2</alternativeID>
@@ -83,255 +61,79 @@
     </pair>
     <pair>
       <initial>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>a22</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b3</alternativeID>
       </terminal>
       <value>
-        <real>0.70467032967</real>
+        <real>0.816666666667</real>
       </value>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a3</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b4</alternativeID>
-      </terminal>
-      <value>
-        <real>0.833166833167</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a3</alternativeID>
+        <alternativeID>a33</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b1</alternativeID>
       </terminal>
       <value>
-        <real>0.833166833167</real>
+        <real>1.0</real>
       </value>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a3</alternativeID>
+        <alternativeID>a33</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b2</alternativeID>
       </terminal>
       <value>
-        <real>0.833166833167</real>
+        <real>1.0</real>
       </value>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a3</alternativeID>
+        <alternativeID>a33</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b3</alternativeID>
       </terminal>
       <value>
-        <real>0.833166833167</real>
+        <real>1.0</real>
       </value>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a4</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b4</alternativeID>
-      </terminal>
-      <value>
-        <real>0.833166833167</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a4</alternativeID>
+        <alternativeID>a44</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b1</alternativeID>
       </terminal>
       <value>
-        <real>0.833166833167</real>
+        <real>0.888888888889</real>
       </value>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a4</alternativeID>
+        <alternativeID>a44</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b2</alternativeID>
       </terminal>
       <value>
-        <real>0.833166833167</real>
+        <real>0.888888888889</real>
       </value>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a4</alternativeID>
+        <alternativeID>a44</alternativeID>
       </initial>
       <terminal>
         <alternativeID>b3</alternativeID>
       </terminal>
       <value>
-        <real>0.833166833167</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a6</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b4</alternativeID>
-      </terminal>
-      <value>
-        <real>0.833166833167</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a6</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b1</alternativeID>
-      </terminal>
-      <value>
-        <real>0.833166833167</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a6</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b2</alternativeID>
-      </terminal>
-      <value>
-        <real>0.833166833167</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a6</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b3</alternativeID>
-      </terminal>
-      <value>
-        <real>0.833166833167</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a5</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b4</alternativeID>
-      </terminal>
-      <value>
-        <real>0.833166833167</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a5</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b1</alternativeID>
-      </terminal>
-      <value>
-        <real>0.833166833167</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a5</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b2</alternativeID>
-      </terminal>
-      <value>
-        <real>0.833166833167</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a5</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b3</alternativeID>
-      </terminal>
-      <value>
-        <real>0.833166833167</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b4</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a1</alternativeID>
-      </terminal>
-      <value>
-        <real>0.76184832117</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b4</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a2</alternativeID>
-      </terminal>
-      <value>
-        <real>0.6496003996</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b4</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a3</alternativeID>
-      </terminal>
-      <value>
-        <real>0.166833166833</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b4</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a4</alternativeID>
-      </terminal>
-      <value>
-        <real>0.166833166833</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b4</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a6</alternativeID>
-      </terminal>
-      <value>
-        <real>0.166833166833</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b4</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a5</alternativeID>
-      </terminal>
-      <value>
-        <real>0.166833166833</real>
+        <real>1.0</real>
       </value>
     </pair>
     <pair>
@@ -339,10 +141,10 @@
         <alternativeID>b1</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a1</alternativeID>
+        <alternativeID>a11</alternativeID>
       </terminal>
       <value>
-        <real>0.76184832117</real>
+        <real>1.0</real>
       </value>
     </pair>
     <pair>
@@ -350,10 +152,10 @@
         <alternativeID>b1</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>a22</alternativeID>
       </terminal>
       <value>
-        <real>0.590659340659</real>
+        <real>0.816666666667</real>
       </value>
     </pair>
     <pair>
@@ -361,10 +163,10 @@
         <alternativeID>b1</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a3</alternativeID>
+        <alternativeID>a33</alternativeID>
       </terminal>
       <value>
-        <real>0.166833166833</real>
+        <real>0.266666666667</real>
       </value>
     </pair>
     <pair>
@@ -372,32 +174,10 @@
         <alternativeID>b1</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a4</alternativeID>
+        <alternativeID>a44</alternativeID>
       </terminal>
       <value>
-        <real>0.166833166833</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b1</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a6</alternativeID>
-      </terminal>
-      <value>
-        <real>0.166833166833</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b1</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a5</alternativeID>
-      </terminal>
-      <value>
-        <real>0.166833166833</real>
+        <real>0.111111111111</real>
       </value>
     </pair>
     <pair>
@@ -405,10 +185,10 @@
         <alternativeID>b2</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a1</alternativeID>
+        <alternativeID>a11</alternativeID>
       </terminal>
       <value>
-        <real>0.833166833167</real>
+        <real>1.0</real>
       </value>
     </pair>
     <pair>
@@ -416,10 +196,10 @@
         <alternativeID>b2</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>a22</alternativeID>
       </terminal>
       <value>
-        <real>0.488886113886</real>
+        <real>1.0</real>
       </value>
     </pair>
     <pair>
@@ -427,10 +207,10 @@
         <alternativeID>b2</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a3</alternativeID>
+        <alternativeID>a33</alternativeID>
       </terminal>
       <value>
-        <real>0.166833166833</real>
+        <real>0.633333333333</real>
       </value>
     </pair>
     <pair>
@@ -438,32 +218,10 @@
         <alternativeID>b2</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a4</alternativeID>
+        <alternativeID>a44</alternativeID>
       </terminal>
       <value>
-        <real>0.166833166833</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b2</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a6</alternativeID>
-      </terminal>
-      <value>
-        <real>0.166833166833</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b2</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a5</alternativeID>
-      </terminal>
-      <value>
-        <real>0.166833166833</real>
+        <real>0.111111111111</real>
       </value>
     </pair>
     <pair>
@@ -471,10 +229,10 @@
         <alternativeID>b3</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a1</alternativeID>
+        <alternativeID>a11</alternativeID>
       </terminal>
       <value>
-        <real>0.892107892108</real>
+        <real>1.0</real>
       </value>
     </pair>
     <pair>
@@ -482,10 +240,10 @@
         <alternativeID>b3</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>a22</alternativeID>
       </terminal>
       <value>
-        <real>0.582637701282</real>
+        <real>1.0</real>
       </value>
     </pair>
     <pair>
@@ -493,10 +251,10 @@
         <alternativeID>b3</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a3</alternativeID>
+        <alternativeID>a33</alternativeID>
       </terminal>
       <value>
-        <real>0.509490509491</real>
+        <real>1.0</real>
       </value>
     </pair>
     <pair>
@@ -504,32 +262,10 @@
         <alternativeID>b3</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>a4</alternativeID>
+        <alternativeID>a44</alternativeID>
       </terminal>
       <value>
-        <real>0.29532967033</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b3</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a6</alternativeID>
-      </terminal>
-      <value>
-        <real>0.166833166833</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b3</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a5</alternativeID>
-      </terminal>
-      <value>
-        <real>0.166833166833</real>
+        <real>0.633333333333</real>
       </value>
     </pair>
   </pairs>
