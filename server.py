@@ -193,26 +193,49 @@ def electreTriC():
 	# Get project with projectID as id
 	project = projects.find_one({"_id" : ObjectId(project_id) })
 	# Check if the project as all the data necessary and not empty or need to fill first
-	empty = len(project["alternatives"]) == 0
+	empty1 = len(project["alternatives"]) == 0
 	collectionName = "alternatives"
-	checkData[collectionName] = empty
-	empty = len(project["criteria"]) == 0
+	checkData[collectionName] = empty1
+	empty2 = len(project["criteria"]) == 0
 	collectionName = "criterions"
-	checkData[collectionName] = empty
-	empty = len(project["parameters"]) == 0
+	checkData[collectionName] = empty2
+	empty3 = len(project["parameters"]) == 0
 	collectionName = "parameters"
-	checkData[collectionName] = empty
-	empty = len(project["categories"]) == 0
+	checkData[collectionName] = empty3
+	empty4 = len(project["categories"]) == 0
 	collectionName = "categories"
-	checkData[collectionName] = empty
-	empty = len(project["performancetables"]) == 0
+	checkData[collectionName] = empty4
+	empty5 = len(project["performancetables"]) == 0
 	collectionName = "performancetables"
-	checkData[collectionName] = empty
-	empty = len(project["profiletables"]) == 0
+	checkData[collectionName] = empty5
+	empty6 = len(project["profiletables"]) == 0
 	collectionName = "profiletables"
-	checkData[collectionName] = empty
+	checkData[collectionName] = empty6
 	# Convert the checkData so it can be saved into a json file
 	checkDataDumps = json.dumps(checkData)
+	# Delete folder of the project before checking if the data is empty or missing
+	pathId = './static/' + str(projectID)
+	chechDataFileName = pathId + '/checkData.json'
+	if os.path.exists(pathId):
+		if os.path.exists(chechDataFileName):
+			os.remove(chechDataFileName)
+		paths = pathId + '/assignments.xml'
+		if os.path.exists(paths):
+			# Unliks the file path because only deleting does not make the file disappear, it still be access by the XMLHttpRequest
+			os.unlink(paths)
+		#if os.path.exists(paths):
+			#os.remove(paths)
+		paths = pathId + '/messages.xml'
+		if os.path.exists(paths):
+			os.remove(paths)
+		shutil.rmtree(pathId) 
+	os.makedirs(pathId)
+	with open(chechDataFileName, 'w') as fp:
+			fp.write(checkDataDumps) 
+	# If some data are empty then end the function and return to the html page
+	if empty1 or empty2 or empty3 or empty4 or empty5 or empty6:
+		print 'Error: some data are empty, so the function ends without even trying...'
+		return render_template('template.html')
 	# Create alternatives.json
 	# Get alternatives data from the project
 	for alternative in project["alternatives"]:
@@ -226,6 +249,16 @@ def electreTriC():
 	for criterion in project["criteria"]:
 		cri = db.criterions.find_one({"_id" : criterion } , {'_id': False})
 		criteriaList.append(cri)
+		# print cri
+		# print cri['weight'] == None
+		# print cri['veto'] == None
+		# print cri['preference'] == None
+		# print cri['indifference'] == None
+		# print cri['direction'] == ''
+		# If any data is missing (null, empty or none), stop the function from executing because it will give an error
+		if cri['weight'] == None or cri['veto'] == None or cri['preference'] == None or cri['indifference'] == None or cri['direction'] == '':
+			print 'Some data is missing...'
+			return render_template('template.html')
 	criteriaDumps = json.dumps(criteriaList)
 	with open('weights.json', 'w') as fp:
 		fp.write(criteriaDumps) 
@@ -721,25 +754,24 @@ def electreTriC():
 	os.system('python ./electre_diviz/cutRelationCrisp/cutRelationCrisp.py -i ./inputsOutputs/cutRelationCrisp/in -o ./inputsOutputs/cutRelationCrisp/out')  
 	shutil.copy2('./inputsOutputs/cutRelationCrisp/out/outranking.xml', './inputsOutputs/electreTriC/in/outranking.xml')
 	os.system('python ./electre_diviz/ElectreTri-CClassAssignments/ElectreTri-CClassAssignments.py -i ./inputsOutputs/electreTriC/in -o ./inputsOutputs/electreTriC/out')  
-	pathId = './static/' + str(projectID)
-	chechDataFileName = pathId + '/checkData.json'
-	#print pathId
-	if os.path.exists(pathId):
-		if os.path.exists(chechDataFileName):
-			os.remove(chechDataFileName)
-		paths = pathId + '/assignments.xml'
-		if os.path.exists(paths):
-			# Unliks the file path because only deleting does not make the file disappear, it still be access by the XMLHttpRequest
-			os.unlink(paths)
-		#if os.path.exists(paths):
-			#os.remove(paths)
-		paths = pathId + '/messages.xml'
-		if os.path.exists(paths):
-			os.remove(paths)
-		shutil.rmtree(pathId) 
-	os.makedirs(pathId)
-	with open(chechDataFileName, 'w') as fp:
-			fp.write(checkDataDumps) 
+	# pathId = './static/' + str(projectID)
+	# chechDataFileName = pathId + '/checkData.json'
+	# if os.path.exists(pathId):
+	# 	if os.path.exists(chechDataFileName):
+	# 		os.remove(chechDataFileName)
+	# 	paths = pathId + '/assignments.xml'
+	# 	if os.path.exists(paths):
+	# 		# Unliks the file path because only deleting does not make the file disappear, it still be access by the XMLHttpRequest
+	# 		os.unlink(paths)
+	# 	#if os.path.exists(paths):
+	# 		#os.remove(paths)
+	# 	paths = pathId + '/messages.xml'
+	# 	if os.path.exists(paths):
+	# 		os.remove(paths)
+	# 	shutil.rmtree(pathId) 
+	# os.makedirs(pathId)
+	# with open(chechDataFileName, 'w') as fp:
+	# 		fp.write(checkDataDumps) 
 	# pp = 'rm -rf ' + pathId
 	# #os.system(pp)
 	# if not os.path.exists(pathId):

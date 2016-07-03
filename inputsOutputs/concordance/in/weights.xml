@@ -2,21 +2,15 @@
 <xmcda:XMCDA xmlns:xmcda="http://www.decision-deck.org/2009/XMCDA-2.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.decision-deck.org/2009/XMCDA-2.1.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.1.0.xsd">
   <criteriaValues>
     <criterionValue>
-      <criterionID>g5</criterionID>
+      <criterionID>gg</criterionID>
       <value>
-        <real>5</real>
+        <real>3</real>
       </value>
     </criterionValue>
     <criterionValue>
-      <criterionID>g6</criterionID>
+      <criterionID>eee</criterionID>
       <value>
-        <real>7</real>
-      </value>
-    </criterionValue>
-    <criterionValue>
-      <criterionID>g7</criterionID>
-      <value>
-        <real>33</real>
+        <real>43</real>
       </value>
     </criterionValue>
   </criteriaValues>

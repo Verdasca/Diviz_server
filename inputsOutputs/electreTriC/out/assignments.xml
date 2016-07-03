@@ -4,46 +4,35 @@
   xsi:schemaLocation='http://www.decision-deck.org/2012/XMCDA-2.2.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.2.0.xsd'>
 <alternativesAffectations>
   <alternativeAffectation>
-    <alternativeID>a11</alternativeID>
+    <alternativeID>aaaa</alternativeID>
     <categoriesInterval>
       <lowerBound>
-        <categoryID>C3</categoryID>
+        <categoryID>C22</categoryID>
       </lowerBound>
       <upperBound>
-        <categoryID>C1</categoryID>
+        <categoryID>C11</categoryID>
       </upperBound>
     </categoriesInterval>
   </alternativeAffectation>
   <alternativeAffectation>
-    <alternativeID>a22</alternativeID>
+    <alternativeID>fffff</alternativeID>
     <categoriesInterval>
       <lowerBound>
-        <categoryID>C3</categoryID>
+        <categoryID>C22</categoryID>
       </lowerBound>
       <upperBound>
-        <categoryID>C1</categoryID>
+        <categoryID>C11</categoryID>
       </upperBound>
     </categoriesInterval>
   </alternativeAffectation>
   <alternativeAffectation>
-    <alternativeID>a33</alternativeID>
+    <alternativeID>yyyy</alternativeID>
     <categoriesInterval>
       <lowerBound>
-        <categoryID>C1</categoryID>
+        <categoryID>C22</categoryID>
       </lowerBound>
       <upperBound>
-        <categoryID>C1</categoryID>
-      </upperBound>
-    </categoriesInterval>
-  </alternativeAffectation>
-  <alternativeAffectation>
-    <alternativeID>a44</alternativeID>
-    <categoriesInterval>
-      <lowerBound>
-        <categoryID>C2</categoryID>
-      </lowerBound>
-      <upperBound>
-        <categoryID>C1</categoryID>
+        <categoryID>C11</categoryID>
       </upperBound>
     </categoriesInterval>
   </alternativeAffectation>

@@ -206,7 +206,8 @@
     margin: auto;
 }
 
-#errorMessage{
+#errorMessage,
+#errorMessage2{
     width: 80%;
     font-size: 18px;
     text-align: center;

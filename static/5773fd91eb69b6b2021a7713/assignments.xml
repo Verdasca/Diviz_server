@@ -36,5 +36,16 @@
       </upperBound>
     </categoriesInterval>
   </alternativeAffectation>
+  <alternativeAffectation>
+    <alternativeID>a4</alternativeID>
+    <categoriesInterval>
+      <lowerBound>
+        <categoryID>C1</categoryID>
+      </lowerBound>
+      <upperBound>
+        <categoryID>C1</categoryID>
+      </upperBound>
+    </categoriesInterval>
+  </alternativeAffectation>
 </alternativesAffectations>
 </xmcda:XMCDA>

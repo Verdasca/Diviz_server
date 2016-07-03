@@ -63,6 +63,7 @@
                 <tbody></tbody>
       </table>
       <p id="errorMessage" style="display:none"></p>
+      <p id="errorMessage2" style="font-size:18px; color:red; text-align: center; margin: auto; width: 80%;">Error: function cannot be executed because some data are missing.<br> Please be sure that all data sections are filled (the section should be green) and not missing or empty (mandatory: weigth, indifference, etc...).</p>
       <br/><br/> 
     </div>
   </div>
@@ -219,7 +220,7 @@
   setTimeout(function() {
     configTutorial(); 
     loadXMLDoc();
-  }, 1500);
+  }, 800);
 
 //setInterval("configTutorial()", 5000);
 //setInterval("loadXMLDoc()", 5000);
@@ -258,6 +259,7 @@
     console.log('Results file exists? ' + resultsFileExists);
     console.log('Error message file exists? ' + messageFileExists);
     if(resultsFileExists){
+      document.getElementById("errorMessage2").style.display = "none";
       //Perform the Ajax request
       window.XMLHttpRequest
       {
@@ -272,6 +274,7 @@
         };
       xmlhttp.send();
     }else if(messageFileExists){
+      document.getElementById("errorMessage2").style.display = "none";
       // If results file does not exist it means there are errors during the method execution, open the error message
       //Perform the Ajax request
       window.XMLHttpRequest
