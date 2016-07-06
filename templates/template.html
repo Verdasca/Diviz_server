@@ -49,9 +49,9 @@
   <div id="main">
     <div id="content">
       <br/> 
-      <p id="explanation">If you want to save these results please click on "Save Results" button, otherwise these results will be lost.<br> To see all your saved results click on "Results" button.</p>
+      <p id="explanation" style="display:none">If you want to save these results please click on "Save Results" button, otherwise these results will be lost.<br> To see all your saved results click on "Results" button.</p>
       <br/> 
-      <button id="methodButtons" class="btn btn-info" type="button" onclick="saveResult()">Save Results</button>
+      <button id="methodButtons" style="display:none" class="btn btn-info" type="button" onclick="saveResult()">Save Results</button>
       <br/>
       <br/><br/>
       <table style="display:none" id="resultsTable" border="1" bordercolor="#033773" class="table table-bordered horizontal">
@@ -125,7 +125,6 @@
       location.href = '/projectSection/?n='+user;
     }
 
-    // TODO
     // Save results on mongodb
     function saveResult(){
       var id = projectId;
@@ -136,7 +135,7 @@
         console.log('Do not save the results because of the error message...');
         return 0;
       }
-      //location.href = '/saveResult/?projectId='+id+'&n='+user+'&project='+project; 
+      location.href = '/saveResult/?projectId='+id+'&n='+user; 
     }
 
     // Function to get the content of a json file
@@ -220,7 +219,7 @@
   setTimeout(function() {
     configTutorial(); 
     loadXMLDoc();
-  }, 800);
+  }, 10);
 
 //setInterval("configTutorial()", 5000);
 //setInterval("loadXMLDoc()", 5000);
@@ -320,6 +319,8 @@
       categoryNum = categoryNum + 2;
     }
     document.getElementById("resultsTable").style.display = "inline-table";
+    document.getElementById("explanation").style.display = "block";
+    document.getElementById("methodButtons").style.display = "inline-table";
   }
 
   // Get content from messages.xml

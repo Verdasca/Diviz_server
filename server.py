@@ -34,6 +34,8 @@ from bson.dbref import DBRef
 import simplejson as json 
 from pprint import pprint
 
+from datetime import datetime
+
 __version__ = '0.2.0'
 
 # Executes when the page is loaded
@@ -157,11 +159,6 @@ def projectSection():
 	return redirect(url, code=302)
 
 
-def get_data(path):
-    response = requests.get(path+"/checkData.json")
-    return response
-
-
 # Execute method Electre Tri C
 @app.route('/electreTriC/')
 def electreTriC():
@@ -169,12 +166,89 @@ def electreTriC():
 	projectID = request.args.get('projectId')
 	# Create a json file that indicates the state of the Electre Tri-C method (if is executable or not)
  	checkData = {}
+ 	# Delete files from inputsOutputs before executing the function to prevent errors or getting the wrong file (if it wasn't updated)
+ 	# From electreTriC
+ 	if os.path.exists('./inputsOutputs/electreTriC/in/alternatives.xml'):
+ 		os.unlink('./inputsOutputs/electreTriC/in/alternatives.xml')
+	if os.path.exists('./inputsOutputs/electreTriC/in/classes.xml'):
+ 		os.unlink('./inputsOutputs/electreTriC/in/classes.xml')
+ 	if os.path.exists('./inputsOutputs/electreTriC/in/classes_profiles.xml'):
+ 		os.unlink('./inputsOutputs/electreTriC/in/classes_profiles.xml')
+ 	if os.path.exists('./inputsOutputs/electreTriC/in/credibility.xml'):
+ 		os.unlink('./inputsOutputs/electreTriC/in/credibility.xml')
+ 	if os.path.exists('./inputsOutputs/electreTriC/in/outranking.xml'):
+ 		os.unlink('./inputsOutputs/electreTriC/in/outranking.xml')
+ 	if os.path.exists('./inputsOutputs/electreTriC/out/messages.xml'):
+ 		os.unlink('./inputsOutputs/electreTriC/out/messages.xml')
+ 	if os.path.exists('./inputsOutputs/electreTriC/out/assignments.xml'):
+ 		os.unlink('./inputsOutputs/electreTriC/out/assignments.xml')
+ 	# From discordance
+ 	if os.path.exists('./inputsOutputs/discordance/in/alternatives.xml'):
+ 		os.unlink('./inputsOutputs/discordance/in/alternatives.xml')
+	if os.path.exists('./inputsOutputs/discordance/in/criteria.xml'):
+ 		os.unlink('./inputsOutputs/discordance/in/criteria.xml')
+ 	if os.path.exists('./inputsOutputs/discordance/in/classes_profiles.xml'):
+ 		os.unlink('./inputsOutputs/discordance/in/classes_profiles.xml')
+ 	if os.path.exists('./inputsOutputs/discordance/in/performance_table.xml'):
+ 		os.unlink('./inputsOutputs/discordance/in/performance_table.xml')
+ 	if os.path.exists('./inputsOutputs/discordance/in/profiles_performance_table.xml'):
+ 		os.unlink('./inputsOutputs/discordance/in/profiles_performance_table.xml')
+ 	if os.path.exists('./inputsOutputs/discordance/out/messages.xml'):
+ 		os.unlink('./inputsOutputs/discordance/out/messages.xml')
+ 	if os.path.exists('./inputsOutputs/discordance/out/discordance.xml'):
+ 		os.unlink('./inputsOutputs/discordance/out/discordance.xml')
+ 	if os.path.exists('./inputsOutputs/discordance/out/counter_veto_crossed.xml'):
+ 		os.unlink('./inputsOutputs/discordance/out/counter_veto_crossed.xml')
+ 	# From cutRelationCrisp
+ 	if os.path.exists('./inputsOutputs/cutRelationCrisp/in/alternatives.xml'):
+ 		os.unlink('./inputsOutputs/cutRelationCrisp/in/alternatives.xml')
+ 	if os.path.exists('./inputsOutputs/cutRelationCrisp/in/classes_profiles.xml'):
+ 		os.unlink('./inputsOutputs/cutRelationCrisp/in/classes_profiles.xml')
+ 	if os.path.exists('./inputsOutputs/cutRelationCrisp/in/credibility.xml'):
+ 		os.unlink('./inputsOutputs/cutRelationCrisp/in/credibility.xml')
+ 	if os.path.exists('./inputsOutputs/cutRelationCrisp/in/method_parameters.xml'):
+ 		os.unlink('./inputsOutputs/cutRelationCrisp/in/method_parameters.xml')
+ 	if os.path.exists('./inputsOutputs/cutRelationCrisp/out/messages.xml'):
+ 		os.unlink('./inputsOutputs/cutRelationCrisp/out/messages.xml')
+ 	if os.path.exists('./inputsOutputs/cutRelationCrisp/out/outranking.xml'):
+ 		os.unlink('./inputsOutputs/cutRelationCrisp/out/outranking.xml')
+ 	# From credibility
+ 	if os.path.exists('./inputsOutputs/credibility/in/alternatives.xml'):
+ 		os.unlink('./inputsOutputs/credibility/in/alternatives.xml')
+ 	if os.path.exists('./inputsOutputs/credibility/in/classes_profiles.xml'):
+ 		os.unlink('./inputsOutputs/credibility/in/classes_profiles.xml')
+ 	if os.path.exists('./inputsOutputs/credibility/in/concordance.xml'):
+ 		os.unlink('./inputsOutputs/credibility/in/concordance.xml')
+ 	if os.path.exists('./inputsOutputs/credibility/in/discordance.xml'):
+ 		os.unlink('./inputsOutputs/credibility/in/discordance.xml')
+ 	if os.path.exists('./inputsOutputs/credibility/out/messages.xml'):
+ 		os.unlink('./inputsOutputs/credibility/out/messages.xml')
+ 	if os.path.exists('./inputsOutputs/credibility/out/credibility.xml'):
+ 		os.unlink('./inputsOutputs/credibility/out/credibility.xml')
+ 	# From concordance
+ 	if os.path.exists('./inputsOutputs/concordance/in/alternatives.xml'):
+ 		os.unlink('./inputsOutputs/concordance/in/alternatives.xml')
+ 	if os.path.exists('./inputsOutputs/concordance/in/classes_profiles.xml'):
+ 		os.unlink('./inputsOutputs/concordance/in/classes_profiles.xml')
+ 	if os.path.exists('./inputsOutputs/concordance/in/criteria.xml'):
+ 		os.unlink('./inputsOutputs/concordance/in/criteria.xml')
+ 	if os.path.exists('./inputsOutputs/concordance/in/weights.xml'):
+ 		os.unlink('./inputsOutputs/concordance/in/weights.xml')
+ 	if os.path.exists('./inputsOutputs/concordance/in/performance_table.xml'):
+ 		os.unlink('./inputsOutputs/concordance/in/performance_table.xml')
+ 	if os.path.exists('./inputsOutputs/concordance/in/profiles_performance_table.xml'):
+ 		os.unlink('./inputsOutputs/concordance/in/profiles_performance_table.xml')
+ 	if os.path.exists('./inputsOutputs/concordance/out/messages.xml'):
+ 		os.unlink('./inputsOutputs/concordance/out/messages.xml')
+ 	if os.path.exists('./inputsOutputs/concordance/out/concordance.xml'):
+ 		os.unlink('./inputsOutputs/concordance/out/concordance.xml')
+ 	print 'Done deleting old files from inputsOutputs.'
 	# Connection to Mongo DB
 	try:
 	    connection = pymongo.MongoClient('mongodb://cristinav:mbdcristinav@vps80648.ovh.net/cristinav_bd')
 	    print "Connected successfully!!!"
 	except pymongo.errors.ConnectionFailure, e:
-	   print "Could not connect to MongoDB: %s" % e 
+		print "Could not connect to MongoDB: %s" % e 
 	db = connection['cristinav_bd']
 	# Get users collection
 	users = db['users']
@@ -184,12 +258,12 @@ def electreTriC():
 	project_id = projectID
 	#userProject = users.find_one({"_id" : ObjectId('576b2f353b4de674060fd244') })
 	# Lists to save the data from projectId
-	alternativesList = [];
-	criteriaList = [];
-	categoriesList = [];
-	parametersList = [];
-	performancetablesList = [];
-	profiletablesList = [];
+	alternativesList = []
+	criteriaList = []
+	categoriesList = []
+	parametersList = []
+	performancetablesList = []
+	profiletablesList = []
 	# Get project with projectID as id
 	project = projects.find_one({"_id" : ObjectId(project_id) })
 	# Check if the project as all the data necessary and not empty or need to fill first
@@ -242,7 +316,7 @@ def electreTriC():
 		alt = db.alternatives.find_one({"_id" : alternative } , {'_id': False})
 		alternativesList.append(alt)
 	alternativesDumps = json.dumps(alternativesList)
-	with open('alternatives.json', 'w') as fp:
+	with open(pathId+'/alternatives.json', 'w') as fp:
 		fp.write(alternativesDumps) 
 	# Create weights.json
 	# Get criteria data from the project
@@ -260,7 +334,7 @@ def electreTriC():
 			print 'Some data is missing...'
 			return render_template('template.html')
 	criteriaDumps = json.dumps(criteriaList)
-	with open('weights.json', 'w') as fp:
+	with open(pathId+'/weights.json', 'w') as fp:
 		fp.write(criteriaDumps) 
 	# Create categories.json
 	# Get categories data from the project
@@ -268,7 +342,7 @@ def electreTriC():
 		cat = db.categories.find_one({"_id" : category } , {'_id': False})
 		categoriesList.append(cat)
 	categoriesDumps = json.dumps(categoriesList)
-	with open('categories.json', 'w') as fp:
+	with open(pathId+'/categories.json', 'w') as fp:
 		fp.write(categoriesDumps) 
 	# Create parameters.json
 	# Get parameters data from the project
@@ -276,7 +350,7 @@ def electreTriC():
 		par = db.parameters.find_one({"_id" : parameter } , {'_id': False})
 		parametersList.append(par)
 	parametersDumps = json.dumps(parametersList)
-	with open('parameters.json', 'w') as fp:
+	with open(pathId+'/parameters.json', 'w') as fp:
 		fp.write(parametersDumps) 
 	# Create performances.json
 	# Get performances data from the project
@@ -284,7 +358,7 @@ def electreTriC():
 		per = db.performancetables.find_one({"_id" : performance } , {'_id': False})
 		performancetablesList.append(per)
 	performancesDumps = json.dumps(performancetablesList)
-	with open('performances.json', 'w') as fp:
+	with open(pathId+'/performances.json', 'w') as fp:
 		fp.write(performancesDumps) 
 	# Create profiles.json
 	# Get profiles data from the project
@@ -292,7 +366,7 @@ def electreTriC():
 		pro = db.profiletables.find_one({"_id" : profile } , {'_id': False})
 		profiletablesList.append(pro)
 	profilesDumps = json.dumps(profiletablesList)
-	with open('profiles.json', 'w') as fp:
+	with open(pathId+'/profiles.json', 'w') as fp:
 		fp.write(profilesDumps) 
 	# Create alternatives.xml
 	# Get alternatives collection from mongodb
@@ -305,9 +379,9 @@ def electreTriC():
 		#fp.write(alternativesDumps) 
 	# Create alternatives.xml
 	# Open the alternatives json file to get the content and save it into a xml file	
-	with open('alternatives.json') as data_file:    
+	with open(pathId+'/alternatives.json') as data_file:    
 		data = json.load(data_file)
-	pprint(data)	
+	#pprint(data)	
 	# Start creating the alternatives xml file
 	doc = minidom.Document()
 	# Create xmcda tag
@@ -349,7 +423,7 @@ def electreTriC():
 	# 	fp.write(criteriaDumps) 
 	# Create weights.xml
 	# Open the alternatives json file to get the content and save it into a xml file	
-	with open('weights.json') as data_file:    
+	with open(pathId+'/weights.json') as data_file:    
 		data = json.load(data_file)
 	# Start creating the weights xml file
 	docWeight = minidom.Document()
@@ -462,7 +536,7 @@ def electreTriC():
 	# 	fp.write(parametersDumps)
 	# Create method_parameters.xml 
 	# Open the alternatives json file to get the content and save it into a xml file	
-	with open('parameters.json') as data_file:    
+	with open(pathId+'/parameters.json') as data_file:    
 		data = json.load(data_file)
 	# Start creating the method_parameters xml file
 	docParameters = minidom.Document()
@@ -512,7 +586,7 @@ def electreTriC():
 	# 	fp.write(categoriesDumps) 
 	# Create classes.xml
 	# Open the categories json file to get the content and save it into a xml file	
-	with open('categories.json') as data_file:    
+	with open(pathId+'/categories.json') as data_file:    
 		data = json.load(data_file)
 	# Start creating classes xml file
 	docClasses = minidom.Document()
@@ -594,7 +668,7 @@ def electreTriC():
 	# 	fp.write(performancesDumps) 
 	# Create performance_table.xml
 	# Open the performances json file to get the content and save it into a xml file	
-	with open('performances.json') as data_file:    
+	with open(pathId+'/performances.json') as data_file:    
 		data = json.load(data_file)
 	# Start creating performance_table xml file
 	docPerformances = minidom.Document()
@@ -673,7 +747,7 @@ def electreTriC():
 	# 	fp.write(profilesDumps) 
 	# Create profiles_performance_table.xml
 	# Open the profiles json file to get the content and save it into a xml file	
-	with open('profiles.json') as data_file:    
+	with open(pathId+'/profiles.json') as data_file:    
 		data = json.load(data_file)
 	# Start creating profiles_performance_table xml file
 	docProfiles = minidom.Document()
@@ -692,7 +766,7 @@ def electreTriC():
 	for d in data:
 		refName = d["action"]
 		checkListProfiles[refName] = ff
-	print checkListProfiles
+	#print checkListProfiles
 	# Create all profiles tag 
 	for d in data:
 		actionId = d["action"]
@@ -791,6 +865,92 @@ def electreTriC():
 	print 'Method executed and files saved.'
 	return render_template('template.html')
 
+# Save results into the project on mongodb
+@app.route('/saveResult/')
+def saveResult(): 
+	#Get project id from url parameter projectId
+	projectID = request.args.get('projectId')
+	#Get user name from url parameter projectId
+	name = request.args.get('n')
+	# Set the path of the project folder
+	path = './static/' + str(projectID)
+	# Connection to Mongo DB
+	try:
+	    connection = pymongo.MongoClient('mongodb://cristinav:mbdcristinav@vps80648.ovh.net/cristinav_bd')
+	    print "Connected successfully!!!"
+	except pymongo.errors.ConnectionFailure, e:
+	   print "Could not connect to MongoDB: %s" % e 
+	db = connection['cristinav_bd']
+	# Get projects collection
+	projects = db['projects']
+	# Set project id from the url parameter as the project we need to get the data to execute the method
+	project_id = projectID
+	# Get project with projectID as id
+	project = projects.find_one({"_id" : ObjectId(project_id) })
+	# Get the current number of executions (will be used as identifier for the new result save)
+	executions = project["numExecutions"]
+	# Update the dateSet and number of executions of the project
+	projects.update_one({'_id': ObjectId(project_id)},{'$set': {'dateSet': datetime.utcnow(), 'numExecutions': executions + 1}}, upsert=False)
+	print 'Projects dateSet and numExecutions updated'
+	# Add a new identifier to the new result saving 
+	projects.update_one({'_id': ObjectId(project_id)}, {'$push': {'results': { 'result': {'identifier': executions}}}})
+	# Get the alternatives from the json file inside the projects folder to save them on mongoDB
+	with open(path+'/alternatives.json') as data_file:    
+		data = json.load(data_file)
+	projects.update_one({'_id': ObjectId(project_id), 'results.result.identifier': executions}, {'$push': {'results.$.alternativeValues': {'$each': data}}})
+	with open(path+'/weights.json') as data_file:    
+		data = json.load(data_file)
+	projects.update_one({'_id': ObjectId(project_id), 'results.result.identifier': executions}, {'$push': {'results.$.criterionValues': {'$each': data}}})
+	with open(path+'/categories.json') as data_file:    
+		data = json.load(data_file)
+	projects.update_one({'_id': ObjectId(project_id), 'results.result.identifier': executions}, {'$push': {'results.$.categoryValues': {'$each': data}}})
+	with open(path+'/parameters.json') as data_file:    
+		data = json.load(data_file)
+	projects.update_one({'_id': ObjectId(project_id), 'results.result.identifier': executions}, {'$push': {'results.$.parameterValues': {'$each': data}}})
+	with open(path+'/performances.json') as data_file:    
+		data = json.load(data_file)
+	projects.update_one({'_id': ObjectId(project_id), 'results.result.identifier': executions}, {'$push': {'results.$.performanceValues': {'$each': data}}})
+	with open(path+'/profiles.json') as data_file:    
+		data = json.load(data_file)
+	projects.update_one({'_id': ObjectId(project_id), 'results.result.identifier': executions}, {'$push': {'results.$.profileValues': {'$each': data}}})
+	# Transform the assignments.xml into json so the results can be saved on mongodb
+	# List to save all results 
+	resultList = []
+	tree = ET.parse(path+'/assignments.xml')
+	root = tree.getroot()
+	# Get the data needed, alternative and its min/max category
+	for child in root.iter('alternativeAffectation'):
+		# Dict to save a result 
+		values = {}
+		# Get alternative value
+		alternative = child.find('alternativeID').text
+		categoriesInterval = child.find('categoriesInterval')
+		lowerBound = categoriesInterval.find('lowerBound')
+		upperBound = categoriesInterval.find('upperBound')
+		# Get min category value
+		lowerCategory = lowerBound.find('categoryID').text
+		# Get max category value
+		upperCategory = upperBound.find('categoryID').text
+		# Add the values into the dict to be added to the list
+		values['alternativeID'] = alternative
+		values['minCategory'] = lowerCategory
+		values['maxCategory'] = upperCategory
+		resultList.append(values)
+	# Save the data into a dict format so it can be saved on mongodb
+	projects.update_one({'_id': ObjectId(project_id), 'results.result.identifier': executions}, {'$push': {'results.$.resultValues': {'$each': resultList}}})
+	print 'Done saving results.'
+	url = 'http://vps288667.ovh.net:3901/results.html?projectId='+projectID+'&n='+name 
+	#url = 'http://localhost:8080/results.html?projectId='+projectID+'&n='+name 
+	return redirect(url, code=302)
+
+# ......................................................................................
+# Test functions... for practise xml2json --input "cd_catalog.xml" --output "cd_catalog.json"
+
+@app.route('/my-link/')
+def my_link():
+	os.remove('./inputsOutputs/electreTriC/out/assignments.xml')
+	return 'Click.'
+
 # Read final results obtained by the method Electre Tri C
 @app.route('/readXMLFile/')
 def readXMLFile(): 
@@ -814,14 +974,6 @@ def readXMLFile():
 	#soup.findAll('div', {"class":"jumbotron"}) 
 	t = soup.find('body').text
 	return t 
-
-# ......................................................................................
-# Test functions... for practise xml2json --input "cd_catalog.xml" --output "cd_catalog.json"
-
-@app.route('/my-link/')
-def my_link():
-	os.remove('./inputsOutputs/electreTriC/out/assignments.xml')
-	return 'Click.'
 
 @app.route('/createDir/')
 def createDir(): 
