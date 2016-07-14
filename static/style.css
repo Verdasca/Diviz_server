@@ -215,3 +215,51 @@
     color: red;
 }
 
+#resultName{
+    text-align: center;
+    vertical-align: middle;
+    width: 25%;
+    margin-right: 30px;
+    font-size: 16px;
+}
+
+#labelResult{
+    font-size: 16px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#loading {
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   position: fixed;
+   display: block;
+   opacity: 0.9;
+   background-color: #fff;
+   z-index: 99;
+   text-align: center;
+}
+
+#loading-image {
+  position: fixed;
+  width: 20%;
+  height: 40%;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+#loading-text {
+  font-size:18px; 
+  font-weight: bold;
+  font-family: Helvetica,Arial,sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+

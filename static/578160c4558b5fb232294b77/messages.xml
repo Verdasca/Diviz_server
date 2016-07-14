@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xmcda:XMCDA xmlns:xmcda='http://www.decision-deck.org/2012/XMCDA-2.2.0'
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+  xsi:schemaLocation='http://www.decision-deck.org/2012/XMCDA-2.2.0 http://www.decision-deck.org/xmcda/_downloads/XMCDA-2.2.0.xsd'>
+<methodMessages>
+  <errorMessage>
+    <text><![CDATA[IndexError: list index out of range]]></text>
+  </errorMessage>
+  <logMessage>
+    <text><![CDATA[Traceback (most recent call last):
+  File "./electre_diviz/ElectreTri-CClassAssignments/ElectreTri-CClassAssignments.py", line 118, in main
+    d.credibility)
+  File "./electre_diviz/ElectreTri-CClassAssignments/ElectreTri-CClassAssignments.py", line 55, in assign_class
+    p_next = profiles[profiles.index(p) + 1]
+IndexError: list index out of range]]></text>
+  </logMessage>
+</methodMessages>
+</xmcda:XMCDA>

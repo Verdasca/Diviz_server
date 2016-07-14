@@ -819,13 +819,25 @@ def electreTriC():
 		pass
 	#os.remove('./inputsOutputs/electreTriC/out/assignments.xml')
 	os.system('python ./electre_diviz/ElectreConcordance/ElectreConcordance.py -i ./inputsOutputs/concordance/in -o ./inputsOutputs/concordance/out') 
+	if not os.path.exists('./inputsOutputs/concordance/out/concordance.xml'):
+		print 'Error from Concordance method: probably invalid data...'
+		return render_template('template.html')	
 	os.system('python ./electre_diviz/ElectreDiscordance/ElectreDiscordance.py -i ./inputsOutputs/discordance/in -o ./inputsOutputs/discordance/out') 
+	if not os.path.exists('./inputsOutputs/discordance/out/discordance.xml'):
+		print 'Error from Discordance method: probably invalid data...'
+		return render_template('template.html')	
 	shutil.copy2('./inputsOutputs/concordance/out/concordance.xml', './inputsOutputs/credibility/in/concordance.xml')
 	shutil.copy2('./inputsOutputs/discordance/out/discordance.xml', './inputsOutputs/credibility/in/discordance.xml')
 	os.system('python ./electre_diviz/ElectreCredibility/ElectreCredibility.py -i ./inputsOutputs/credibility/in -o ./inputsOutputs/credibility/out')
+	if not os.path.exists('./inputsOutputs/credibility/out/credibility.xml'):
+		print 'Error from Credibility method: probably invalid data...'
+		return render_template('template.html')	
 	shutil.copy2('./inputsOutputs/credibility/out/credibility.xml', './inputsOutputs/cutRelationCrisp/in/credibility.xml')
 	shutil.copy2('./inputsOutputs/credibility/out/credibility.xml', './inputsOutputs/electreTriC/in/credibility.xml')
 	os.system('python ./electre_diviz/cutRelationCrisp/cutRelationCrisp.py -i ./inputsOutputs/cutRelationCrisp/in -o ./inputsOutputs/cutRelationCrisp/out')  
+	if not os.path.exists('./inputsOutputs/cutRelationCrisp/out/outranking.xml'):
+		print 'Error from CutRelationCrisp method: probably invalid data...'
+		return render_template('template.html')	
 	shutil.copy2('./inputsOutputs/cutRelationCrisp/out/outranking.xml', './inputsOutputs/electreTriC/in/outranking.xml')
 	os.system('python ./electre_diviz/ElectreTri-CClassAssignments/ElectreTri-CClassAssignments.py -i ./inputsOutputs/electreTriC/in -o ./inputsOutputs/electreTriC/out')  
 	# pathId = './static/' + str(projectID)
@@ -870,8 +882,10 @@ def electreTriC():
 def saveResult(): 
 	#Get project id from url parameter projectId
 	projectID = request.args.get('projectId')
-	#Get user name from url parameter projectId
+	#Get user name from url parameter n
 	name = request.args.get('n')
+	#Get result name from url parameter resName
+	resultName = request.args.get('resName')
 	# Set the path of the project folder
 	path = './static/' + str(projectID)
 	# Connection to Mongo DB
@@ -893,7 +907,7 @@ def saveResult():
 	projects.update_one({'_id': ObjectId(project_id)},{'$set': {'dateSet': datetime.utcnow(), 'numExecutions': executions + 1}}, upsert=False)
 	print 'Projects dateSet and numExecutions updated'
 	# Add a new identifier to the new result saving 
-	projects.update_one({'_id': ObjectId(project_id)}, {'$push': {'results': { 'result': {'identifier': executions}}}})
+	projects.update_one({'_id': ObjectId(project_id)}, {'$push': {'results': { 'result': {'identifier': executions, 'name': resultName, 'resultDate': datetime.utcnow()}}}})
 	# Get the alternatives from the json file inside the projects folder to save them on mongoDB
 	with open(path+'/alternatives.json') as data_file:    
 		data = json.load(data_file)

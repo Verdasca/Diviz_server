@@ -36,8 +36,7 @@
           <ul id="optionList" class="nav navbar-nav">
             <li id="sections"><a id="aSectionsDescription" href="javascript:void(0);" onclick="changeSection('description');">Description</a></li>
             <li id="sectionsCriteria"><a id="aSections" href="javascript:void(0);" onclick="changeSection('criterion');">Criterion Set</a></li>
-            <li id="sectionsAlternatives"><a id="aSections" href="javascript:void(0);" onclick="changeSection('alternative');">Alternative Set</a></li>
-            <li id="sectionsPerformances"><a id="aSections" href="javascript:void(0);" onclick="changeSection('performance');">Performance Table</a></li>
+            <li id="sectionsAlternatives"><a id="aSections" href="javascript:void(0);" onclick="changeSection('alternative');">Alternative Set &<br>Performance Table</a></li>
             <li id="sectionsConfigurations"><a id="aSections" href="javascript:void(0);" onclick="changeSection('configurations');">Decision Configurations</a></li>
             <li><button id="buttonDiviz" class="btn btn-success" onclick="changeSection('divizServer');">Execute</button></li>
             <li><button id="buttonDiviz" class="btn btn-primary" onclick="changeSection('results');">Results</button></li>
@@ -49,8 +48,10 @@
   <div id="main">
     <div id="content">
       <br/> 
-      <p id="explanation" style="display:none">If you want to save these results please click on "Save Results" button, otherwise these results will be lost.<br> To see all your saved results click on "Results" button.</p>
+      <p id="explanation" style="display:none; font-size:18px; font-family: Helvetica,Arial,sans-serif;">If you want to save these results please click on "Save Results" button, otherwise these results will be lost.<br> To see all your saved results click on "Results" button.</p>
       <br/> 
+      <label id="labelResult" style="display:none">Insert a name for the results: </label>
+      <input id="resultName" onkeyup="checkResultName()" style="display:none" type="text" value="" placeholder="Result name" name="name" required></input>
       <button id="methodButtons" style="display:none" class="btn btn-info" type="button" onclick="saveResult()">Save Results</button>
       <br/>
       <br/><br/>
@@ -62,24 +63,36 @@
                 </thead>
                 <tbody></tbody>
       </table>
+      <p id="errorMethod" style="display:none;font-size:18px; font-family: Helvetica,Arial,sans-serif; color:red; text-align: center; margin: auto; width: 80%;">
+        Function cannot be executed.<br>Please be sure that all data sections are filled (the sections should be green) and/or not missing or empty (mandatory: weigth, indifference, etc...) and have an enough number of criteria/alternatives/categories (have at least 2 of each).
+      </p>
+      <br>
       <p id="errorMessage" style="display:none"></p>
-      <p id="errorMessage2" style="font-size:18px; color:red; text-align: center; margin: auto; width: 80%;">Error: function cannot be executed because some data are missing.<br> Please be sure that all data sections are filled (the section should be green) and not missing or empty (mandatory: weigth, indifference, etc...).</p>
+      <p id="errorMessage2" style="display:none; font-size:18px; font-family: Helvetica,Arial,sans-serif; color:red; text-align: center; margin: auto; width: 80%;">Function cannot be executed because some data are missing.<br> Please be sure that all data sections are filled (the section should be green) and not missing or empty (mandatory: weigth, indifference, etc...) and also create at least 3 elements in each section (i.e. 3 criteria, 3 alternatives, etc...).</p>
       <br/><br/> 
+    </div>
+    <div id="loading">
+      <img id="loading-image" src="./static/loader.gif" alt="Loading..." />
+      <p id="loading-text">Executing...</p>
     </div>
   </div>
   <!--<script type="text/javascript" src="../static/checkData.json"></script>-->
   <script type="text/javascript">
+    // Hide loader
+    $('#loading').hide();
+
     var projectId = getParameterByName('projectId'); 
     var projectName = getParameterByName('project');
     var username = getParameterByName('n');  
-    //var resultsPath = 'http://localhost:5000/static/' + projectId + '/assignments.xml?' + new Date().getTime(); 
-    //var messagePath = 'http://localhost:5000/static/' + projectId + '/messages.xml?' + new Date().getTime();  
-    //var checkDataPath = 'http://localhost:5000/static/' + projectId + '/checkData.json?' + new Date().getTime();  
+    // var resultsPath = 'http://localhost:5000/static/' + projectId + '/assignments.xml?' + new Date().getTime(); 
+    // var messagePath = 'http://localhost:5000/static/' + projectId + '/messages.xml?' + new Date().getTime();  
+    // var checkDataPath = 'http://localhost:5000/static/' + projectId + '/checkData.json?' + new Date().getTime();  
     var resultsPath = 'http://vps288667.ovh.net:5010/static/' + projectId + '/assignments.xml?' + new Date().getTime(); 
     var messagePath = 'http://vps288667.ovh.net:5010/static/' + projectId + '/messages.xml?' + new Date().getTime();  
     var checkDataPath = 'http://vps288667.ovh.net:5010/static/' + projectId + '/checkData.json?' + new Date().getTime();
     document.getElementById("userName").innerHTML = 'User: ' + username;
     document.getElementById("aSectionsDescription").innerHTML = projectName + '<br> Description';
+    document.getElementById("methodButtons").disabled=true;
 
     // Function to get project id from the url as a parameter
     function getParameterByName(name, url) {
@@ -102,6 +115,8 @@
       if(sectionName == 'divizServer'){
         //url = 'http://vps288667.ovh.net:5010?projectId='+id;  
         //window.location(url);
+        // Show loader when execute button was clicked
+        $('#loading').show();
         location.href = 'http://vps288667.ovh.net:5010/electreTriC/?projectId='+id+'&n='+user+'&project='+project;    
       }else{
         //url = 'http://vps288667.ovh.net:3901/'+sectionName+'.html?projectId='+id; 
@@ -125,17 +140,27 @@
       location.href = '/projectSection/?n='+user;
     }
 
+    // Disabled save button when input as a name
+    function checkResultName() {
+      if(document.getElementById("resultName").value == ""){
+        document.getElementById("methodButtons").disabled=true;
+      }else{
+        document.getElementById("methodButtons").disabled=false;
+      }
+    }
+
     // Save results on mongodb
     function saveResult(){
       var id = projectId;
       var user = username;
       var project = projectName;
+      var nameResult = document.getElementById("resultName").value;
       // See if results where successful, if not don't save results
       if(document.getElementById('resultsTable').style.display == 'none'){
         console.log('Do not save the results because of the error message...');
         return 0;
       }
-      location.href = '/saveResult/?projectId='+id+'&n='+user; 
+      location.href = '/saveResult/?projectId='+id+'&n='+user+'&resName='+nameResult; 
     }
 
     // Function to get the content of a json file
@@ -173,21 +198,13 @@
           document.getElementById("sectionsCriteria").style.backgroundColor = '#6fdc6f';
           //document.getElementById("step1").innerHTML += '&#9989';
         }
-        // See if alternatives are done or not
-        if(actual_JSON.alternatives){
+        // See if alternatives and performance table are done or not
+        if(actual_JSON.alternatives || actual_JSON.performancetables){
           document.getElementById("sectionsAlternatives").style.backgroundColor = '#ff3333';
           //document.getElementById("step2").innerHTML += '&#10060';
         } else{
           document.getElementById("sectionsAlternatives").style.backgroundColor = '#6fdc6f';
           //document.getElementById("step2").innerHTML += '&#9989';
-        }
-        // See if performance table is done or not
-        if(actual_JSON.performancetables){
-          document.getElementById("sectionsPerformances").style.backgroundColor = '#ff3333';
-          //document.getElementById("step3").innerHTML += '&#10060';
-        } else{
-          document.getElementById("sectionsPerformances").style.backgroundColor = '#6fdc6f';
-          //document.getElementById("step3").innerHTML += '&#9989';
         }
         // See if are all done or not
         if(actual_JSON.categories || actual_JSON.parameters || actual_JSON.profiletables){
@@ -321,6 +338,8 @@
     document.getElementById("resultsTable").style.display = "inline-table";
     document.getElementById("explanation").style.display = "block";
     document.getElementById("methodButtons").style.display = "inline-table";
+    document.getElementById("labelResult").style.display = "inline-block";
+    document.getElementById("resultName").style.display = "inline-block";
   }
 
   // Get content from messages.xml
@@ -334,7 +353,8 @@
       txt += errorMessage[i].childNodes[0].nodeValue + ' <br/>';
     }
     paragraph.innerHTML = txt;
-    document.getElementById("errorMessage").style.display = "block";
+    document.getElementById("errorMethod").style.display = "block";
+    //document.getElementById("errorMessage").style.display = "block";
   }
   </script>
 </body>
