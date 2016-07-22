@@ -6,396 +6,128 @@
   <pairs>
     <pair>
       <initial>
-        <alternativeID>a1</alternativeID>
+        <alternativeID>altTeste1</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>b1</alternativeID>
+        <alternativeID>B</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="location">
           <boolean>false</boolean>
         </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
+        <value id="price">
           <boolean>false</boolean>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a1</alternativeID>
+        <alternativeID>altTeste1</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>b2</alternativeID>
+        <alternativeID>G</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="location">
           <boolean>false</boolean>
         </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
+        <value id="price">
           <boolean>false</boolean>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a1</alternativeID>
+        <alternativeID>altTeste22</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>b3</alternativeID>
+        <alternativeID>B</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="location">
           <boolean>false</boolean>
         </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
+        <value id="price">
           <boolean>false</boolean>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>altTeste22</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>b1</alternativeID>
+        <alternativeID>G</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="location">
           <boolean>false</boolean>
         </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
+        <value id="price">
           <boolean>false</boolean>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>B</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>b2</alternativeID>
+        <alternativeID>altTeste1</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="location">
           <boolean>false</boolean>
         </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
+        <value id="price">
           <boolean>false</boolean>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>B</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>b3</alternativeID>
+        <alternativeID>altTeste22</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="location">
           <boolean>false</boolean>
         </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
+        <value id="price">
           <boolean>false</boolean>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a3</alternativeID>
+        <alternativeID>G</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>b1</alternativeID>
+        <alternativeID>altTeste1</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="location">
           <boolean>false</boolean>
         </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
+        <value id="price">
           <boolean>false</boolean>
         </value>
       </values>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a3</alternativeID>
+        <alternativeID>G</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>b2</alternativeID>
+        <alternativeID>altTeste22</alternativeID>
       </terminal>
       <values>
-        <value id="g1 - Price">
+        <value id="location">
           <boolean>false</boolean>
         </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
-          <boolean>false</boolean>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a3</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b3</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <boolean>false</boolean>
-        </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
-          <boolean>false</boolean>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b1</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a1</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <boolean>false</boolean>
-        </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
-          <boolean>false</boolean>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b1</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a2</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <boolean>false</boolean>
-        </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
-          <boolean>false</boolean>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b1</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a3</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <boolean>false</boolean>
-        </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
-          <boolean>false</boolean>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b2</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a1</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <boolean>false</boolean>
-        </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
-          <boolean>false</boolean>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b2</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a2</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <boolean>false</boolean>
-        </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
-          <boolean>false</boolean>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b2</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a3</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <boolean>false</boolean>
-        </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
-          <boolean>false</boolean>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b3</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a1</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <boolean>false</boolean>
-        </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
-          <boolean>false</boolean>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b3</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a2</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <boolean>false</boolean>
-        </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
-          <boolean>false</boolean>
-        </value>
-      </values>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b3</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a3</alternativeID>
-      </terminal>
-      <values>
-        <value id="g1 - Price">
-          <boolean>false</boolean>
-        </value>
-        <value id="g2 - Location">
-          <boolean>false</boolean>
-        </value>
-        <value id="g3 - Schedule">
-          <boolean>false</boolean>
-        </value>
-        <value id="g4 - Culture">
+        <value id="price">
           <boolean>false</boolean>
         </value>
       </values>

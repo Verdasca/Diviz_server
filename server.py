@@ -41,101 +41,7 @@ __version__ = '0.2.0'
 # Executes when the page is loaded
 @app.route('/')
 def index():
-	# #Get project id from url parameter projectId
-	# projectID = request.args.get('projectId')
-	# # Create a json file that indicates the state of the Electre Tri-C method (if is executable or not)
- # 	checkData = {}
-	# # Connection to Mongo DB
-	# try:
-	#     connection = pymongo.MongoClient('mongodb://cristinav:mbdcristinav@vps80648.ovh.net/cristinav_bd')
-	#     print "Connected successfully!!!"
-	# except pymongo.errors.ConnectionFailure, e:
-	#    print "Could not connect to MongoDB: %s" % e 
-	# db = connection['cristinav_bd']
-	# # Get projects collection
-	# projects = db['projects']
-	# # Set project id from the url parameter as the project we need to get the data to execute the method
-	# project_id = projectID
-	# # Get project with projectID as id
-	# project = projects.find_one({"_id" : ObjectId(project_id) })
-	# # Check if the project as all the data necessary and not empty or need to fill first
-	# empty = len(project["alternatives"]) == 0
-	# collectionName = "alternatives"
-	# checkData[collectionName] = empty
-	# empty = len(project["criteria"]) == 0
-	# collectionName = "criterions"
-	# checkData[collectionName] = empty
-	# empty = len(project["parameters"]) == 0
-	# collectionName = "parameters"
-	# checkData[collectionName] = empty
-	# empty = len(project["categories"]) == 0
-	# collectionName = "categories"
-	# checkData[collectionName] = empty
-	# empty = len(project["performancetables"]) == 0
-	# collectionName = "performancetables"
-	# checkData[collectionName] = empty
-	# empty = len(project["profiletables"]) == 0
-	# collectionName = "profiletables"
-	# checkData[collectionName] = empty
-	# # Convert the checkData so it can be saved into a json file
-	# checkDataDumps = json.dumps(checkData)
-	# with open('static/checkData.json', 'w') as fp:
-	# 	fp.write(checkDataDumps) 
 	return render_template('template.html')
-# 	#Get project id from url parameter projectId
-# 	projectID = request.args.get('projectId')
-# 	print (projectID)
-# 	# Create a json file that indicates the state of the Electre Tri-C method (if is executable or not)
-# 	checkData = {}
-# 	# Connection to Mongo DB
-# 	try:
-# 	    connection = pymongo.MongoClient('mongodb://cristinav:mbdcristinav@vps80648.ovh.net/cristinav_bd')
-# 	    print "Connected successfully!!!"
-# 	except pymongo.errors.ConnectionFailure, e:
-# 	   print "Could not connect to MongoDB: %s" % e 
-# 	db = connection['cristinav_bd']
-# 	# Get projects collection
-# 	projects = db['projects']
-# 	# Set project id from the url parameter as the project we need to get the data to execute the method
-# 	project_id = projectID
-# 	# Get project with projectID as id
-# 	project = projects.find_one({"_id" : ObjectId(project_id) })
-# 	#print len(project["alternatives"]) #prints the number of alternatives that exists in the array
-# 	#collection = db['alternatives'] 
-# 	#print(collection.count() == 0) # checks if collection is empty
-# 	#print(collection.count()) # returns how many alternatives are in the collections
-# 	# Check if the project as all the data necessary and not empty or need to fill first
-# 	empty = len(project["alternatives"]) == 0
-# 	collectionName = "alternatives"
-# 	checkData[collectionName] = empty
-# 	#collection = db['criterions'] 
-# 	empty = len(project["criteria"]) == 0
-# 	collectionName = "criterions"
-# 	checkData[collectionName] = empty
-# 	#collection = db['parameters'] 
-# 	empty = len(project["parameters"]) == 0
-# 	collectionName = "parameters"
-# 	checkData[collectionName] = empty
-# 	#collection = db['categories'] 
-# 	empty = len(project["categories"]) == 0
-# 	collectionName = "categories"
-# 	checkData[collectionName] = empty
-# 	#collection = db['performancetables'] 
-# 	empty = len(project["performancetables"]) == 0
-# 	collectionName = "performancetables"
-# 	checkData[collectionName] = empty
-# 	#collection = db['profiletables'] 
-# 	empty = len(project["profiletables"]) == 0
-# 	collectionName = "profiletables"
-# 	checkData[collectionName] = empty
-# 	print(checkData)
-# 	# Convert the checkData so it can be saved into a json file
-# 	checkDataDumps = json.dumps(checkData)
-# 	with open('checkData.json', 'w') as fp:
-# 		fp.write(checkDataDumps)  
-# 	with open('static/checkData.json', 'w') as fp:
-# 		fp.write(checkDataDumps)  			
-# 	return render_template('template.html')
 
 # Go back to project section
 @app.route('/projectSection/')
@@ -164,6 +70,11 @@ def projectSection():
 def electreTriC():
 	#Get project id from url parameter projectId
 	projectID = request.args.get('projectId')
+	#Get user name from url parameter n
+	name = request.args.get('n')
+	#url for redirecting, goes back to the result page after executing the function
+	url = 'http://vps288667.ovh.net:3901/results.html?projectId='+projectID+'&n='+name 
+	#url = 'http://localhost:8080/results.html?projectId='+projectID+'&n='+name 
 	# Create a json file that indicates the state of the Electre Tri-C method (if is executable or not)
  	checkData = {}
  	# Delete files from inputsOutputs before executing the function to prevent errors or getting the wrong file (if it wasn't updated)
@@ -309,7 +220,8 @@ def electreTriC():
 	# If some data are empty then end the function and return to the html page
 	if empty1 or empty2 or empty3 or empty4 or empty5 or empty6:
 		print 'Error: some data are empty, so the function ends without even trying...'
-		return render_template('template.html')
+		#return render_template('template.html')
+		return redirect(url, code=302)
 	# Create alternatives.json
 	# Get alternatives data from the project
 	for alternative in project["alternatives"]:
@@ -332,7 +244,8 @@ def electreTriC():
 		# If any data is missing (null, empty or none), stop the function from executing because it will give an error
 		if cri['weight'] == None or cri['veto'] == None or cri['preference'] == None or cri['indifference'] == None or cri['direction'] == '':
 			print 'Some data is missing...'
-			return render_template('template.html')
+			#return render_template('template.html')
+			return redirect(url, code=302)
 	criteriaDumps = json.dumps(criteriaList)
 	with open(pathId+'/weights.json', 'w') as fp:
 		fp.write(criteriaDumps) 
@@ -821,23 +734,31 @@ def electreTriC():
 	os.system('python ./electre_diviz/ElectreConcordance/ElectreConcordance.py -i ./inputsOutputs/concordance/in -o ./inputsOutputs/concordance/out') 
 	if not os.path.exists('./inputsOutputs/concordance/out/concordance.xml'):
 		print 'Error from Concordance method: probably invalid data...'
-		return render_template('template.html')	
+		#return render_template('template.html')	
+		saveResultError()
+		return redirect(url, code=302)
 	os.system('python ./electre_diviz/ElectreDiscordance/ElectreDiscordance.py -i ./inputsOutputs/discordance/in -o ./inputsOutputs/discordance/out') 
 	if not os.path.exists('./inputsOutputs/discordance/out/discordance.xml'):
 		print 'Error from Discordance method: probably invalid data...'
-		return render_template('template.html')	
+		#return render_template('template.html')	
+		saveResultError()
+		return redirect(url, code=302)
 	shutil.copy2('./inputsOutputs/concordance/out/concordance.xml', './inputsOutputs/credibility/in/concordance.xml')
 	shutil.copy2('./inputsOutputs/discordance/out/discordance.xml', './inputsOutputs/credibility/in/discordance.xml')
 	os.system('python ./electre_diviz/ElectreCredibility/ElectreCredibility.py -i ./inputsOutputs/credibility/in -o ./inputsOutputs/credibility/out')
 	if not os.path.exists('./inputsOutputs/credibility/out/credibility.xml'):
 		print 'Error from Credibility method: probably invalid data...'
-		return render_template('template.html')	
+		#return render_template('template.html')
+		saveResultError()	
+		return redirect(url, code=302)
 	shutil.copy2('./inputsOutputs/credibility/out/credibility.xml', './inputsOutputs/cutRelationCrisp/in/credibility.xml')
 	shutil.copy2('./inputsOutputs/credibility/out/credibility.xml', './inputsOutputs/electreTriC/in/credibility.xml')
 	os.system('python ./electre_diviz/cutRelationCrisp/cutRelationCrisp.py -i ./inputsOutputs/cutRelationCrisp/in -o ./inputsOutputs/cutRelationCrisp/out')  
 	if not os.path.exists('./inputsOutputs/cutRelationCrisp/out/outranking.xml'):
 		print 'Error from CutRelationCrisp method: probably invalid data...'
-		return render_template('template.html')	
+		#return render_template('template.html')	
+		saveResultError()
+		return redirect(url, code=302)
 	shutil.copy2('./inputsOutputs/cutRelationCrisp/out/outranking.xml', './inputsOutputs/electreTriC/in/outranking.xml')
 	os.system('python ./electre_diviz/ElectreTri-CClassAssignments/ElectreTri-CClassAssignments.py -i ./inputsOutputs/electreTriC/in -o ./inputsOutputs/electreTriC/out')  
 	# pathId = './static/' + str(projectID)
@@ -869,16 +790,22 @@ def electreTriC():
 		if os.path.exists('./inputsOutputs/electreTriC/out/assignments.xml'):
 			shutil.copy2('./inputsOutputs/electreTriC/out/assignments.xml', pathId+'/assignments.xml')
 	except OSError:
-		pass
+		#pass
+		saveResultError()
+		return redirect(url, code=302)
 	try:
 		shutil.copy2('./inputsOutputs/electreTriC/out/messages.xml', pathId+'/messages.xml')
 	except OSError:
-		pass
+		#pass
+		saveResultError()
+		return redirect(url, code=302)
 	print 'Method executed and files saved.'
-	return render_template('template.html')
+	#return render_template('template.html')
+	saveResult()
+	return redirect(url, code=302)
 
 # Save results into the project on mongodb
-@app.route('/saveResult/')
+#@app.route('/saveResult/')
 def saveResult(): 
 	#Get project id from url parameter projectId
 	projectID = request.args.get('projectId')
@@ -886,6 +813,8 @@ def saveResult():
 	name = request.args.get('n')
 	#Get result name from url parameter resName
 	resultName = request.args.get('resName')
+	#Set the ok message
+	messageOk = 'Everything OK. No errors.'
 	# Set the path of the project folder
 	path = './static/' + str(projectID)
 	# Connection to Mongo DB
@@ -907,26 +836,26 @@ def saveResult():
 	projects.update_one({'_id': ObjectId(project_id)},{'$set': {'dateSet': datetime.utcnow(), 'numExecutions': executions + 1}}, upsert=False)
 	print 'Projects dateSet and numExecutions updated'
 	# Add a new identifier to the new result saving 
-	projects.update_one({'_id': ObjectId(project_id)}, {'$push': {'results': { 'result': {'identifier': executions, 'name': resultName, 'resultDate': datetime.utcnow()}}}})
+	projects.update_one({'_id': ObjectId(project_id)}, {'$push': {'results': {'identifier': executions, 'name': resultName, 'methodError': messageOk, 'resultDate': datetime.utcnow()}}})
 	# Get the alternatives from the json file inside the projects folder to save them on mongoDB
 	with open(path+'/alternatives.json') as data_file:    
 		data = json.load(data_file)
-	projects.update_one({'_id': ObjectId(project_id), 'results.result.identifier': executions}, {'$push': {'results.$.alternativeValues': {'$each': data}}})
+	projects.update_one({'_id': ObjectId(project_id), 'results.identifier': executions}, {'$push': {'results.$.alternativeValues': {'$each': data}}})
 	with open(path+'/weights.json') as data_file:    
 		data = json.load(data_file)
-	projects.update_one({'_id': ObjectId(project_id), 'results.result.identifier': executions}, {'$push': {'results.$.criterionValues': {'$each': data}}})
+	projects.update_one({'_id': ObjectId(project_id), 'results.identifier': executions}, {'$push': {'results.$.criterionValues': {'$each': data}}})
 	with open(path+'/categories.json') as data_file:    
 		data = json.load(data_file)
-	projects.update_one({'_id': ObjectId(project_id), 'results.result.identifier': executions}, {'$push': {'results.$.categoryValues': {'$each': data}}})
+	projects.update_one({'_id': ObjectId(project_id), 'results.identifier': executions}, {'$push': {'results.$.categoryValues': {'$each': data}}})
 	with open(path+'/parameters.json') as data_file:    
 		data = json.load(data_file)
-	projects.update_one({'_id': ObjectId(project_id), 'results.result.identifier': executions}, {'$push': {'results.$.parameterValues': {'$each': data}}})
+	projects.update_one({'_id': ObjectId(project_id), 'results.identifier': executions}, {'$push': {'results.$.parameterValues': {'$each': data}}})
 	with open(path+'/performances.json') as data_file:    
 		data = json.load(data_file)
-	projects.update_one({'_id': ObjectId(project_id), 'results.result.identifier': executions}, {'$push': {'results.$.performanceValues': {'$each': data}}})
+	projects.update_one({'_id': ObjectId(project_id), 'results.identifier': executions}, {'$push': {'results.$.performanceValues': {'$each': data}}})
 	with open(path+'/profiles.json') as data_file:    
 		data = json.load(data_file)
-	projects.update_one({'_id': ObjectId(project_id), 'results.result.identifier': executions}, {'$push': {'results.$.profileValues': {'$each': data}}})
+	projects.update_one({'_id': ObjectId(project_id), 'results.identifier': executions}, {'$push': {'results.$.profileValues': {'$each': data}}})
 	# Transform the assignments.xml into json so the results can be saved on mongodb
 	# List to save all results 
 	resultList = []
@@ -951,11 +880,42 @@ def saveResult():
 		values['maxCategory'] = upperCategory
 		resultList.append(values)
 	# Save the data into a dict format so it can be saved on mongodb
-	projects.update_one({'_id': ObjectId(project_id), 'results.result.identifier': executions}, {'$push': {'results.$.resultValues': {'$each': resultList}}})
+	projects.update_one({'_id': ObjectId(project_id), 'results.identifier': executions}, {'$push': {'results.$.resultValues': {'$each': resultList}}})
 	print 'Done saving results.'
-	url = 'http://vps288667.ovh.net:3901/results.html?projectId='+projectID+'&n='+name 
+	#url = 'http://vps288667.ovh.net:3901/results.html?projectId='+projectID+'&n='+name 
 	#url = 'http://localhost:8080/results.html?projectId='+projectID+'&n='+name 
-	return redirect(url, code=302)
+	#return redirect(url, code=302)
+
+def saveResultError(): 
+	#Get project id from url parameter projectId
+	projectID = request.args.get('projectId')
+	#Get user name from url parameter n
+	name = request.args.get('n')
+	#Get result name from url parameter resName
+	resultName = request.args.get('resName')
+	#Get the message error
+	messageError = 'Method could not be successfully executed. Please be sure that all data are consistent and with the right type. Make sure to have at least 2 or more elements in criteria, alternatives and categories. Check if the performance table has the right number of criteria/alternatives (and also the right names) and the profile performance table has the right number of criteria/reference actions (and also the right names). Credibility Lambda should be in range [0, 1].'
+	# Connection to Mongo DB
+	try:
+	    connection = pymongo.MongoClient('mongodb://cristinav:mbdcristinav@vps80648.ovh.net/cristinav_bd')
+	    print "Connected successfully!!!"
+	except pymongo.errors.ConnectionFailure, e:
+	   print "Could not connect to MongoDB: %s" % e 
+	db = connection['cristinav_bd']
+	# Get projects collection
+	projects = db['projects']
+	# Set project id from the url parameter as the project we need to get the data to execute the method
+	project_id = projectID
+	# Get project with projectID as id
+	project = projects.find_one({"_id" : ObjectId(project_id) })
+	# Get the current number of executions (will be used as identifier for the new result save)
+	executions = project["numExecutions"]
+	# Update the dateSet and number of executions of the project
+	projects.update_one({'_id': ObjectId(project_id)},{'$set': {'dateSet': datetime.utcnow(), 'numExecutions': executions + 1}}, upsert=False)
+	print 'Projects dateSet and numExecutions updated'
+	# Add a new identifier to the new result saving 
+	projects.update_one({'_id': ObjectId(project_id)}, {'$push': {'results': {'identifier': executions, 'name': resultName, 'methodError': messageError, 'resultDate': datetime.utcnow()}}})
+	print 'Done saving error results.'
 
 # ......................................................................................
 # Test functions... for practise xml2json --input "cd_catalog.xml" --output "cd_catalog.json"

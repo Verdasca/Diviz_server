@@ -6,54 +6,76 @@
   <pairs>
     <pair>
       <initial>
-        <alternativeID>a1</alternativeID>
+        <alternativeID>altTeste1</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>b1</alternativeID>
+        <alternativeID>B</alternativeID>
       </terminal>
       <value>
-        <real>0.921</real>
+        <real>0.875</real>
       </value>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a1</alternativeID>
+        <alternativeID>altTeste1</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>b2</alternativeID>
+        <alternativeID>G</alternativeID>
       </terminal>
       <value>
-        <real>0.329</real>
+        <real>0.875</real>
       </value>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a1</alternativeID>
+        <alternativeID>altTeste22</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>b3</alternativeID>
+        <alternativeID>B</alternativeID>
       </terminal>
       <value>
-        <real>0.329</real>
+        <real>0.875</real>
       </value>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>altTeste22</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>b1</alternativeID>
+        <alternativeID>G</alternativeID>
       </terminal>
       <value>
-        <real>0.981741140216</real>
+        <real>0.875</real>
       </value>
     </pair>
     <pair>
       <initial>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>B</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>b2</alternativeID>
+        <alternativeID>altTeste1</alternativeID>
+      </terminal>
+      <value>
+        <real>0.416666666667</real>
+      </value>
+    </pair>
+    <pair>
+      <initial>
+        <alternativeID>B</alternativeID>
+      </initial>
+      <terminal>
+        <alternativeID>altTeste22</alternativeID>
+      </terminal>
+      <value>
+        <real>0.416666666667</real>
+      </value>
+    </pair>
+    <pair>
+      <initial>
+        <alternativeID>G</alternativeID>
+      </initial>
+      <terminal>
+        <alternativeID>altTeste1</alternativeID>
       </terminal>
       <value>
         <real>1.0</real>
@@ -61,145 +83,13 @@
     </pair>
     <pair>
       <initial>
-        <alternativeID>a2</alternativeID>
+        <alternativeID>G</alternativeID>
       </initial>
       <terminal>
-        <alternativeID>b3</alternativeID>
+        <alternativeID>altTeste22</alternativeID>
       </terminal>
       <value>
         <real>1.0</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a3</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b1</alternativeID>
-      </terminal>
-      <value>
-        <real>0.671</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a3</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b2</alternativeID>
-      </terminal>
-      <value>
-        <real>0.921</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>a3</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>b3</alternativeID>
-      </terminal>
-      <value>
-        <real>0.921</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b1</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a1</alternativeID>
-      </terminal>
-      <value>
-        <real>0.671</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b1</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a2</alternativeID>
-      </terminal>
-      <value>
-        <real>0.158</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b1</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a3</alternativeID>
-      </terminal>
-      <value>
-        <real>0.408</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b2</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a1</alternativeID>
-      </terminal>
-      <value>
-        <real>0.671</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b2</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a2</alternativeID>
-      </terminal>
-      <value>
-        <real>0.631533333333</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b2</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a3</alternativeID>
-      </terminal>
-      <value>
-        <real>0.408</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b3</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a1</alternativeID>
-      </terminal>
-      <value>
-        <real>0.671</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b3</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a2</alternativeID>
-      </terminal>
-      <value>
-        <real>0.75</real>
-      </value>
-    </pair>
-    <pair>
-      <initial>
-        <alternativeID>b3</alternativeID>
-      </initial>
-      <terminal>
-        <alternativeID>a3</alternativeID>
-      </terminal>
-      <value>
-        <real>0.158</real>
       </value>
     </pair>
   </pairs>

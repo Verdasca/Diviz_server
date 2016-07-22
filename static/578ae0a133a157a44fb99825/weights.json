@@ -1,0 +1,1 @@
+[{"direction": "max", "name": "location", "weight": 12.5, "veto": 0, "rank": null, "__v": 0, "preference": 2, "measure": "cardinal", "indifference": 0, "description": "l"}, {"direction": "min", "name": "price", "weight": 87.5, "veto": 2, "rank": null, "__v": 0, "preference": 8, "measure": "ordinal", "indifference": 5, "description": "p"}]
