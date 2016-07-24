@@ -894,7 +894,7 @@ def saveResultError():
 	#Get result name from url parameter resName
 	resultName = request.args.get('resName')
 	#Get the message error
-	messageError = 'Method could not be successfully executed. Please be sure that all data are consistent and with the right type. Make sure to have at least 2 or more elements in criteria, alternatives and categories. Check if the performance table has the right number of criteria/alternatives (and also the right names) and the profile performance table has the right number of criteria/reference actions (and also the right names). Credibility Lambda should be in range [0.0, 1.0].'
+	messageError = 'Method could not be successfully executed. Please be sure that all data are consistent and with the right type. Make sure to have at least 2 or more elements in criteria, alternatives and categories. Check if the performance table has the right number of criteria/alternatives (and also the right names) and the profile performance table has the right number of criteria/reference actions (and also the right names). Credibility Lambda should be in range [0,0; 1,0].'
 	# Connection to Mongo DB
 	try:
 	    connection = pymongo.MongoClient('mongodb://cristinav:mbdcristinav@vps80648.ovh.net/cristinav_bd')
