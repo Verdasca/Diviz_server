@@ -813,6 +813,8 @@ def saveResult():
 	name = request.args.get('n')
 	#Get result name from url parameter resName
 	resultName = request.args.get('resName')
+	#Get notes from url parameter resName
+	notes = request.args.get('notes')
 	#Set the ok message
 	messageOk = 'Everything OK. No errors.'
 	# Set the path of the project folder
@@ -836,8 +838,8 @@ def saveResult():
 	projects.update_one({'_id': ObjectId(project_id)},{'$set': {'dateSet': datetime.utcnow(), 'numExecutions': executions + 1}}, upsert=False)
 	print 'Projects dateSet and numExecutions updated'
 	# Add a new identifier to the new result saving 
-	projects.update_one({'_id': ObjectId(project_id)}, {'$push': {'results': {'identifier': executions, 'name': resultName, 'methodError': messageOk, 'resultDate': datetime.utcnow()}}})
-	# Get the alternatives from the json file inside the projects folder to save them on mongoDB
+	projects.update_one({'_id': ObjectId(project_id)}, {'$push': {'results': {'identifier': executions, 'name': resultName, 'methodError': messageOk, 'resultDate': datetime.utcnow(), 'resultNotes':notes}}})
+	# Get all the data from the json file inside the projects folder to save them on mongoDB
 	with open(path+'/alternatives.json') as data_file:    
 		data = json.load(data_file)
 	projects.update_one({'_id': ObjectId(project_id), 'results.identifier': executions}, {'$push': {'results.$.alternativeValues': {'$each': data}}})
@@ -893,8 +895,12 @@ def saveResultError():
 	name = request.args.get('n')
 	#Get result name from url parameter resName
 	resultName = request.args.get('resName')
+	#Get notes from url parameter resName
+	notes = request.args.get('notes')
 	#Get the message error
 	messageError = 'Method could not be successfully executed. Please be sure that all data are consistent and with the right type. Make sure to have at least 2 or more elements in criteria, alternatives and categories. Check if the performance table has the right number of criteria/alternatives (and also the right names) and the profile performance table has the right number of criteria/reference actions (and also the right names). Credibility Lambda should be in range [0,0; 1,0].'
+	# Set the path of the project folder
+	path = './static/' + str(projectID)
 	# Connection to Mongo DB
 	try:
 	    connection = pymongo.MongoClient('mongodb://cristinav:mbdcristinav@vps80648.ovh.net/cristinav_bd')
@@ -914,7 +920,26 @@ def saveResultError():
 	projects.update_one({'_id': ObjectId(project_id)},{'$set': {'dateSet': datetime.utcnow(), 'numExecutions': executions + 1}}, upsert=False)
 	print 'Projects dateSet and numExecutions updated'
 	# Add a new identifier to the new result saving 
-	projects.update_one({'_id': ObjectId(project_id)}, {'$push': {'results': {'identifier': executions, 'name': resultName, 'methodError': messageError, 'resultDate': datetime.utcnow()}}})
+	projects.update_one({'_id': ObjectId(project_id)}, {'$push': {'results': {'identifier': executions, 'name': resultName, 'methodError': messageError, 'resultDate': datetime.utcnow(), 'resultNotes':notes}}})
+	# Get all the data from the json file inside the projects folder to save them on mongoDB
+	with open(path+'/alternatives.json') as data_file:    
+		data = json.load(data_file)
+	projects.update_one({'_id': ObjectId(project_id), 'results.identifier': executions}, {'$push': {'results.$.alternativeValues': {'$each': data}}})
+	with open(path+'/weights.json') as data_file:    
+		data = json.load(data_file)
+	projects.update_one({'_id': ObjectId(project_id), 'results.identifier': executions}, {'$push': {'results.$.criterionValues': {'$each': data}}})
+	with open(path+'/categories.json') as data_file:    
+		data = json.load(data_file)
+	projects.update_one({'_id': ObjectId(project_id), 'results.identifier': executions}, {'$push': {'results.$.categoryValues': {'$each': data}}})
+	with open(path+'/parameters.json') as data_file:    
+		data = json.load(data_file)
+	projects.update_one({'_id': ObjectId(project_id), 'results.identifier': executions}, {'$push': {'results.$.parameterValues': {'$each': data}}})
+	with open(path+'/performances.json') as data_file:    
+		data = json.load(data_file)
+	projects.update_one({'_id': ObjectId(project_id), 'results.identifier': executions}, {'$push': {'results.$.performanceValues': {'$each': data}}})
+	with open(path+'/profiles.json') as data_file:    
+		data = json.load(data_file)
+	projects.update_one({'_id': ObjectId(project_id), 'results.identifier': executions}, {'$push': {'results.$.profileValues': {'$each': data}}})
 	print 'Done saving error results.'
 
 # ......................................................................................
