@@ -61,7 +61,7 @@ def projectSection():
 	rightUser = users.find_one({"username" : name })
 	print rightUser['_id']
 	userId = str(rightUser['_id'])
-	url = 'http://vps288667.ovh.net:3901/projects.html?userId='+userId
+	url = 'http://mcdaframework.sysresearch.org/projects.html?userId='+userId
 	return redirect(url, code=302)
 
 
@@ -73,7 +73,7 @@ def electreTriC():
 	#Get user name from url parameter n
 	name = request.args.get('n')
 	#url for redirecting, goes back to the result page after executing the function
-	url = 'http://vps288667.ovh.net:3901/results.html?projectId='+projectID+'&n='+name 
+	url = 'http://mcdaframework.sysresearch.org/results.html?projectId='+projectID+'&n='+name 
 	#url = 'http://localhost:8080/results.html?projectId='+projectID+'&n='+name 
 	# Create a json file that indicates the state of the Electre Tri-C method (if is executable or not)
  	checkData = {}
@@ -242,10 +242,10 @@ def electreTriC():
 		# print cri['indifference'] == None
 		# print cri['direction'] == ''
 		# If any data is missing (null, empty or none), stop the function from executing because it will give an error
-		if cri['weight'] == None or cri['veto'] == None or cri['preference'] == None or cri['indifference'] == None or cri['direction'] == '':
-			print 'Some data is missing...'
+		#if cri['weight'] == None or cri['veto'] == None or cri['preference'] == None or cri['indifference'] == None or cri['direction'] == '':
+			#print 'Some data is missing...'
 			#return render_template('template.html')
-			return redirect(url, code=302)
+			#return redirect(url, code=302)
 	criteriaDumps = json.dumps(criteriaList)
 	with open(pathId+'/weights.json', 'w') as fp:
 		fp.write(criteriaDumps) 
